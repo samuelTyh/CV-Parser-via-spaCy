@@ -1,0 +1,2 @@
+pdfminer.six==20181108
+pdfminer==20140328
