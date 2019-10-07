@@ -1,2 +1,2 @@
+spacy==2.2.1
 pdfminer.six==20181108
-pdfminer==20140328
