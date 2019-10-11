@@ -1,2 +1,4 @@
 spacy==2.2.1
+numpy==1.17.2
 pdfminer.six==20181108
+scikit_learn==0.21.3
