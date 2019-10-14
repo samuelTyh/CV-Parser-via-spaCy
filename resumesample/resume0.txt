@@ -1,16 +1,36 @@
 
 
+Location:
+Rajapalaiyam
+
+
+To:
+Present
+
+
 Contact:
-indeed.com
+indeed.com/r/Karthihayini-C/627254c443836b3c
 
 
-Education:
-lecturerOracle tutorials -  Mumbai, Maharashtra -April 2016 to Presentfor computer science (STD 11th and 12th) (2 years)➢ Worked at "Dr.Babasaheb Ambedkar College, Chembur (W) " as a lecturer for • B.Sc. (ComputerScience & Information Technology)• F.Y.J.C. (Computer Science & I.T.)• S.Y.J.C. (Computer Science & I.T.)➢ Worked at "LIVE" as a Head of the IT Department and Lecturer for Web designing.➢ Worked at "Kohinoor College Of Hotel Management" as visiting lecturer for SEM I.➢ Working at "ORACLE TUTORIALS" as a lecturer for computer science (STD 11th and 12th)EDUCATIONMCAMumbai University -  Mumbai, MaharashtraB.Sc. in Com.SciMumbai University -  Mumbai, MaharashtraSKILLSSEARCH ENGINE MARKETING (2 years), SEM (2 years), ACCESS (Less than 1 year), AJAX (Lessthan 1 year), APACHE (Less than 1 year)ADDITIONAL INFORMATIONTechnical skills:Languages: C, C++, Java (J2EE),Web Component APIS:: Jdbc, Servlet, JSP.Frameworks: Spring 4 & Struts 2ORM Framework: HibernateWeb Development: Html5, CSS3, Java Script, Ajax &JQuery, Angular Jshttps://www.indeed.com/r/Ananya-Chavan/738779ab71971a96?isid=rex-download&ikw=download-top&co=INhttps://www.indeed.com/r/Ananya-Chavan/738779ab71971a96?isid=rex-download&ikw=download-top&co=INApplication Servers: Apache Tomcat,IDE: Eclipse, NetbeansDatabase: Ms-Access, MysqlOperating Systems: Windows 7, 8, 10FTP Client: FilezillaVersioning Tools: GitProject Details:"Real Estate Application" (Client: Global Realtor PVT. LTD Pune)Front-End: Java (J2EE), JDBC, Servlet, JSP, Jquery.Back end: Mysql.Duration: 6 Month (Internship)Company Name: AryanTech India Pvt. Ltd. PuneMy Role: Developer as Trainee.Module: Module 4.Description: Developed as a MCA Final SEM Project for"Global Realtors PVT.LTD, Hinjewadi, Pune."The Real Estate Web Application is an interactive, effective and revenue-generating websitedesigned for the Real Estate Industry. The main objective of this application is to help the RealEstate Company to display unlimited number of property listings on the website."Beauty Parlor Management System" (B.Sc. (Com.Sci.))Tool: VB 6.0Language: VBDatabase: MS-AccessOperating System: Windows XPThe Beauty Parlor Management System is an easy and effective system to use. The main featuresof this system are to avoid manual work and keep storing all appointments of customers."Web Designing Project (Reptiles.com) " (B.Sc. (Com.Sci.))Language: HTML and ASPTool: Dreamweaver 8.0Database: MS-AccessOperating System: Windows XPThe Reptiles.com is a simple informative site. The main features of this system are to give allinformation of Snakes.
+Skills:
+Destructive Testing (Less than 1 year), FORGE (Less than 1 year), Non-Destructive (Less than 1year), Non-Destructive Testing (Less than 1 year), quality control (Less than 1 year)ADDITIONAL INFORMATIONAREAS OF INTEREST1. Strength of materials2. Engineering statistics and quality controlINDUSTRIAL VISITS• BAY FORGE, Madurantakam• ASHOK LEYLAN, Ennore• CARBORUNDUM, Thiruvottiyur• BONFIGLIOLI, ThirumudivakkamIN-PLANT TRAININGS & WORKSHOPS• Attended in-plant training on security division at "Minda Corporation Limited", Chennai.• Attended in-plant training in "BHEL", Ranipet.• Attended workshop on "Aero Modeling" conducted at Consto UAV Technologies• Attended workshop on "Non-Destructive Testing" conducted at Velammal engineering College,Chennai.PERSONAL QUALIFICATIONS:• Ability to quick grasp the concepts• Flexible• Hard working• Consistent
 
 
 Name:
-Ananya Chavan
+Karthihayini C
 
 
-Location:
-Mumbai
+LatestRole:
+Systems Engineer
+
+
+From:
+December 2016
+
+
+Education:
+B E in Production EngineeringVelammal Engineering College
+
+
+LatestCompany:
+Infosys Limited

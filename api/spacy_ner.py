@@ -70,7 +70,7 @@ class NERspacy(object):
         other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
         with nlp.disable_pipes(*other_pipes):  # only train NER
             optimizer = nlp.begin_training()
-            for itn in range(10):
+            for itn in range(20):
                 print("Starting iteration " + str(itn))
                 random.shuffle(train_data)
                 losses = {}
@@ -117,7 +117,7 @@ class NERspacy(object):
                 y_pred = [x.ent_type_ if x.ent_type_ == ent.label_ else 'Not ' + ent.label_ for x in doc_to_test]
                 if d[ent.label_][0] == 0:
                     # f.write("For Entity "+ent.label_+"\n")
-                    # f.write(classification_report(y_true, y_pred)+"\n")
+                    # f.write(classificatio n_report(y_true, y_pred)+"\n")
                     (p, r, f, s) = precision_recall_fscore_support(y_true, y_pred, average='weighted', labels=np.unique(y_pred))
                     a = accuracy_score(y_true, y_pred)
                     d[ent.label_][0] = 1

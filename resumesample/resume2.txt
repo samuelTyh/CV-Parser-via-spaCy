@@ -1,24 +1,36 @@
 
 
-Contact:
-indeed.com/r/Ayushi-Srivastava/2bf1c4b058984738
+Location:
+Thane
 
 
 To:
 Present
 
 
+Contact:
+indeed.com/r/kimaya-sonawane/1f27a18d2e4b1948
+
+
+Skills:
+network engineers, Networking, CCNA, knowledge of Active Directory, DHCP, DNS ,Troubleshooting and fix Network related issues (2 years)
+
+
 Name:
-Ayushi Srivastava
-
-
-Location:
-Senior
-
-
-Education:
-B.TechHMR Institute of Technology and Management in Electronics and Communication2012 to 2016Senior Secondary2012Sumermal Jain Public School2010SKILLSCSS (Less than 1 year), DHCP (Less than 1 year), HSRP. (Less than 1 year), routing protocols.(Less than 1 year), Voip (2 years)https://www.indeed.com/r/Ayushi-Srivastava/2bf1c4b058984738?isid=rex-download&ikw=download-top&co=INADDITIONAL INFORMATIONTECHNICAL KNOWLEDGE• Have knowledge of configuration of routers, switches, routing protocols.• Knowledge of cucm including Call Search Space (CSS), Partitions and device registration.• Knowledge of VLAN, port-securities, STP, ACL and protocols including HSRP.• Knowledge of Subnetting, VLAN Tagging, DHCPAREA OF INTEREST• Work in the networks team and explore more in VoIP domain.• Gaining more knowledge about CUCM, routers and switching.• Gain more experience on managing the gateways.KEY STRENGTHS• Adaptive towards location changes.• Determination to work hard and learn new technologies.• Open to work in any shift.
+kimaya sonawane
 
 
 LatestRole:
-New Delhi
+Technical Support Engineer
+
+
+From:
+November 2016
+
+
+Education:
+BE in computer scienceSSVPS’s Late B. S. Deore College of Engineering ,Dhule
+
+
+LatestCompany:
+SAP
