@@ -13,6 +13,7 @@ class NERspacy(object):
 
     dataturks_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project.json"
     test_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project_test.json"
+    predict_FilePath = os.getcwd() + "/pdf_sample/CV_Samuel_Tseng.pdf.txt"
 
     @staticmethod
     def convert_dataturks_to_spacy(filepath):
@@ -70,7 +71,7 @@ class NERspacy(object):
         other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
         with nlp.disable_pipes(*other_pipes):  # only train NER
             optimizer = nlp.begin_training()
-            for itn in range(20):
+            for itn in range(10):
                 print("Starting iteration " + str(itn))
                 random.shuffle(train_data)
                 losses = {}
@@ -82,6 +83,8 @@ class NERspacy(object):
                         sgd=optimizer,  # callable to update weights
                         losses=losses)
                 print(losses)
+
+        nlp.to_disk(os.getcwd()+"/api/model")
 
         # test the model and evaluate it
         examples = self.convert_dataturks_to_spacy(self.test_JSON_FilePath)
@@ -118,7 +121,8 @@ class NERspacy(object):
                 if d[ent.label_][0] == 0:
                     # f.write("For Entity "+ent.label_+"\n")
                     # f.write(classificatio n_report(y_true, y_pred)+"\n")
-                    (p, r, f, s) = precision_recall_fscore_support(y_true, y_pred, average='weighted', labels=np.unique(y_pred))
+                    (p, r, f, s) = precision_recall_fscore_support(
+                        y_true, y_pred, average='weighted', labels=np.unique(y_pred))
                     a = accuracy_score(y_true, y_pred)
                     d[ent.label_][0] = 1
                     d[ent.label_][1] += p
@@ -133,3 +137,14 @@ class NERspacy(object):
             print("Precision : " + str(d[i][1] / d[i][5]))
             print("Recall : " + str(d[i][2] / d[i][5]))
             print("F-score : " + str(d[i][3] / d[i][5]))
+
+    def predict_spacy(self):
+
+        nlp = spacy.load(os.getcwd() + "/api/model")
+        data_for_predict = open(self.predict_FilePath, 'r').read()
+        doc = nlp(data_for_predict)
+        output = dict()
+        for ent in doc.ents:
+            output.update({"{}".format(ent.label_): "{}".format(ent.text)})
+
+        print(output)
