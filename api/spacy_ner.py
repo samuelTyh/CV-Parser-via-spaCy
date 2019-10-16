@@ -159,7 +159,9 @@ def predict_spacy(content):
     doc = nlp(content)
     output = dict()
     for ent in doc.ents:
-        output.update({"{}".format(ent.label_): "{}".format(ent.text)})
+        output[ent.label_] = []
+    for ent in doc.ents:
+        output[ent.label_].append(ent.text)
     print(output)
 
     with open("prediction/ner_prediction.json", "w") as f:

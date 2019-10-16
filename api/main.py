@@ -8,7 +8,7 @@ data = ne.convert_dataturks_to_spacy(ne.dataturks_JSON_FilePath)
 
 content = pdf_extractor.extract_pdf_content(sys.argv[1])
 with open(sys.argv[1] + '.txt', 'w') as f:
-    f.writelines(content)
+    f.write(content.replace('\n', ' '))
 
 if __name__ == "__main__":
     if "model" not in os.listdir(os.getcwd()+"/api"):
