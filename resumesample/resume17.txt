@@ -1,24 +1,27 @@
 
 
+Contact:
+indeed.com/r/Suman-Biswas/63db95fe3ae14910
+
+
+Education:
+MBA in Information TechnologySikkim Manipal University
+
+
+Skills:
+SAP HANA (4 years), SAP UI5/Fiori (4 years), AngularJs (Less than 1 year), Web Development(8 years), Asp.Net (5 years), C# (4 years), SQL Server (3 years), HTML5 (5 years), Javascript (6years), CSS3 (6 years), Software Solution Design (2 years), VBA (2 years), SAP BI (2 years)LINKShttps://www.linkedin.com/in/sumanbiswas2018AWARDSShell CIO awardOctober 2016Received Shell CIO award for Prelude project.
+
+
+LatestCompany:
+Shell
+
+
 Location:
-Bangalore
 Bengaluru
 
 
 To:
 Present
-
-
-Contact:
-indeed.com/r/Suman-Biswas/63db95fe3ae14910
-
-
-Skills:
-SAP HANA (4 years), SAP UI5/Fiori (4 years), AngularJs (Less than 1 year), Web Development(8 years), Asp.Net (5 years), C# (4 years), SQL Server (3 years), HTML5 (5 years), Javascript (6years), CSS3 (6 years), Software Solution Design (2 years), VBA (2 years), SAP BI (2 years)LINKShttps://www.linkedin.com/in/sumanbiswas2018AWARDSShell CIO awardOctober 2016Received Shell CIO award for Prelude project.https://www.linkedin.com/in/sumanbiswas2018Best of IBM awardDecember 2012Best of IBM award to perform outstanding performance for the whole year.Best CI of the year awardDecember 2012In 2012 can able to save 60,000 man hours by generating continuous improvement (CI) intechnical area of our project. The work won the best CI award for 2012.CERTIFICATIONS/LICENSESIntroduction to Oil Industry from “The Oxford Princeton Programme”,2016.
-
-
-Name:
-Suman Biswas
 
 
 LatestRole:
@@ -29,9 +32,9 @@ From:
 March 2016
 
 
-Education:
-MBA in Information TechnologySikkim Manipal University
+Name:
+Suman Biswas
 
 
-LatestCompany:
-Shell
+Accomplishment:
+Self-initiative• Developed social network application (alap.me, 2012 - 2014) using C#.Net, ASP.Net, MySQL,JavaScript/jQuery, CSS, HTML5. With development.• Alap.me having social feature with live chat, messaging, friendship, photo and status share. • For alap.me, setup and managed Windows 2008 server, Web server (IIS7), MySQL DB setup,schedule backup, email server configuration, chat server development and setup, client-serverload balancing to optimize CPU performance, email marking with process development.• Developed (in 2012) blooddonornetwork.com for social support.http://socketprogramming.blogspot.com/

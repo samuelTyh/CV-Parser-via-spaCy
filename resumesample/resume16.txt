@@ -1,5 +1,13 @@
 
 
+Contact:
+indeed.com/r/Akash-Gulhane/8b86faac48268d09
+
+
+Skills:
+Technical Skills:CCNA (Cisco Certified Network Associate)Database:MS-AccessOther:Hardware & Networking, Core Java, C, C++Operating Systems: Windows server O.S 2012, Windows XP/7/8 User Level
+
+
 Location:
 Amravati
 
@@ -8,17 +16,13 @@ To:
 2012
 
 
-Contact:
-indeed.com/r/Akash-Gulhane/8b86faac48268d09
-
-
-Name:
-Akash Gulhane
+LatestRole:
+Microsoft Certified System Engineer
 
 
 From:
 2012
 
 
-LatestRole:
-Microsoft Certified System Engineer
+Name:
+Akash Gulhane

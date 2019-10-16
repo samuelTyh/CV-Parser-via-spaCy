@@ -1,23 +1,23 @@
 
 
+Contact:
+indeed.com/r/Dinesh-Reddy/139711455c45e1ad
+
+
+Skills:
+Technical SkillsDevops pipelines: Cloud bees Enterprise Jenkins, GIT, Docker, AWSSCM Tools: SVN, GIT.Continuous Build: ANT, MavenArtifact Repository: Sontype NexusContainers: Docker, AWS Basics, ChefStatic code Analysis: Sonarqube Check styleCI Tools: Cloud bees Enterprise Jenkins.Editors and IDEs: Eclipse (IMS Distribution), Notepad++Operating Systems: MS Windows XP/2000/NT/98, UNIX, LinuxDatabase: MY SQL.Servers: Apache, TomcatTools: MS Officesoftware engineerciscoBuild & Release through complete automation using jenkins and config by chef in complete cloudenviornment like AWS GCPEDUCATIONBSCSri Venkateswara university tirupati
+
+
+LatestCompany:
+Cisco Bangalore
+
+
 Location:
 Bengaluru
 
 
 To:
 Present
-
-
-Contact:
-indeed.com/r/Dinesh-Reddy/139711455c45e1ad
-
-
-Accomplishment:
-Professional Credentials and Abilities• Having 3.5+ years of experience as a Build and Release Engineer in automating, building,releasing of code from one environment to other environment and deploying to servers.• Extensively worked on Jenkins for continuous integration and for End to End automation for allbuild and deployments.• Having In-depth understanding of the principles and best practices of Software Configuration• Extensive experience using MAVEN and ANT as build tools for the building of deployable artifacts(jar, war & tar) from source code.• Build, Configure, Manage and Coordinate all Build and Release Management activities.• Worked on Automated build & Release process.• Automated highly build, test, and reporting mechanisms.• Worked on server machines with platforms like windows64, windows32 and linux64 to test andresolve the new release for group build issues, test failures, build breaks, Integration issues, andanalyzed test logs in Agile Environment.• Troubleshooting and problem solving of Linux/UNIX servers, debugging OS failure.• Experience in working on source control tools like SVN and GIT.• Expert in deploying the code through web application servers like Apache, Tomcat.• Extensive experience of working with the release and deployment of large scale Java/J2EEWebapplications.• Experience in Deploying to and administering in the use of Tomcat, Nexus, Apache web server,SVN.• Excellent communicative, interpersonal, intuitive, analysis and leadership skills with ability towork efficiently in both independent and team work environments.
-
-
-Name:
-Dinesh Reddy
 
 
 LatestRole:
@@ -28,9 +28,9 @@ From:
 September 2016
 
 
-Education:
-BSCSri Venkateswara university tirupati
+Name:
+Dinesh Reddy
 
 
-LatestCompany:
-Cisco Bangalore
+Accomplishment:
+Professional Credentials and Abilities• Having 3.5+ years of experience as a Build and Release Engineer in automating, building,releasing of code from one environment to other environment and deploying to servers.• Extensively worked on Jenkins for continuous integration and for End to End automation for allbuild and deployments.• Having In-depth understanding of the principles and best practices of Software Configuration• Extensive experience using MAVEN and ANT as build tools for the building of deployable artifacts(jar, war & tar) from source code.• Build, Configure, Manage and Coordinate all Build and Release Management activities.• Worked on Automated build & Release process.• Automated highly build, test, and reporting mechanisms.• Worked on server machines with platforms like windows64, windows32 and linux64 to test andresolve the new release for group build issues, test failures, build breaks, Integration issues, andanalyzed test logs in Agile Environment.• Troubleshooting and problem solving of Linux/UNIX servers, debugging OS failure.• Experience in working on source control tools like SVN and GIT.• Expert in deploying the code through web application servers like Apache, Tomcat.• Extensive experience of working with the release and deployment of large scale Java/J2EEWebapplications.• Experience in Deploying to and administering in the use of Tomcat, Nexus, Apache web server,SVN.• Excellent communicative, interpersonal, intuitive, analysis and leadership skills with ability towork efficiently in both independent and team work environments.

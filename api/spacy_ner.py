@@ -13,7 +13,8 @@ class NERspacy(object):
 
     dataturks_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project.json"
     test_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project_test.json"
-    predict_FilePath = os.getcwd() + "/pdf_sample/CV_Samuel_Tseng.pdf.txt"
+    n_iter = 50
+    not_improve = 10
 
     @staticmethod
     def convert_dataturks_to_spacy(filepath):
@@ -71,8 +72,13 @@ class NERspacy(object):
         other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
         with nlp.disable_pipes(*other_pipes):  # only train NER
             optimizer = nlp.begin_training()
-            for itn in range(10):
-                print("Starting iteration " + str(itn))
+            print(">>>>>>>>>>  Training the model  <<<<<<<<<<")
+
+            losses_best = 100000
+            early_stop = 0
+
+            for itn in range(self.n_iter):
+                print("Starting iteration {}".format(itn))
                 random.shuffle(train_data)
                 losses = {}
                 for text, annotations in train_data:
@@ -83,16 +89,25 @@ class NERspacy(object):
                         sgd=optimizer,  # callable to update weights
                         losses=losses)
                 print(losses)
+                if losses["ner"] < losses_best:
+                    early_stop = 0
+                    losses_best = int(losses["ner"])
+                    with nlp.use_params(optimizer.averages):
+                        nlp.to_disk(os.getcwd()+"/api/model")
+                else:
+                    early_stop += 1
 
-        nlp.to_disk(os.getcwd()+"/api/model")
+                print("Training will stop early if value reached {not_improve}, "
+                      "it's {early_stop} now.".format(not_improve=self.not_improve, early_stop=early_stop))
+
+                if early_stop >= self.not_improve:
+                    print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
+                    break
+                if itn == self.n_iter:
+                    print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
 
         # test the model and evaluate it
         examples = self.convert_dataturks_to_spacy(self.test_JSON_FilePath)
-        tp = 0
-        tr = 0
-        tf = 0
-
-        ta = 0
         c = 0
         for text, annot in examples:
 
@@ -138,13 +153,14 @@ class NERspacy(object):
             print("Recall : " + str(d[i][2] / d[i][5]))
             print("F-score : " + str(d[i][3] / d[i][5]))
 
-    def predict_spacy(self):
 
-        nlp = spacy.load(os.getcwd() + "/api/model")
-        data_for_predict = open(self.predict_FilePath, 'r').read()
-        doc = nlp(data_for_predict)
-        output = dict()
-        for ent in doc.ents:
-            output.update({"{}".format(ent.label_): "{}".format(ent.text)})
+def predict_spacy(content):
+    nlp = spacy.load(os.getcwd() + "/api/model")
+    doc = nlp(content)
+    output = dict()
+    for ent in doc.ents:
+        output.update({"{}".format(ent.label_): "{}".format(ent.text)})
+    print(output)
 
-        print(output)
+    with open("prediction/ner_prediction.json", "w") as f:
+        json.dump(output, f)

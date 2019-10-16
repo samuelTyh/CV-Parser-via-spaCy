@@ -3,7 +3,6 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from io import StringIO
-import sys
 
 
 def extract_pdf_content(file):
@@ -25,7 +24,3 @@ def extract_pdf_content(file):
     device.close()
     outfp.close()
     return mystr
-
-
-with open(sys.argv[1]+'.txt', 'w') as f:
-    f.writelines(extract_pdf_content(sys.argv[1]))

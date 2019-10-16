@@ -1,27 +1,27 @@
 
 
-Location:
-Bengaluru
-
-
-To:
-Present
-
-
 Contact:
 indeed.com/r/Manjari-Singh/fd072d33991401f0
+
+
+Education:
+B.TECH. in Information TechnologyAmity University
 
 
 Skills:
 QA (7 years), TESTING (6 years), ESTIMATION (6 years), AMDOCS (Less than 1 year), BILLING(Less than 1 year)ADDITIONAL INFORMATIONSKILLS AND COMPETENCIESDomain and Functional Expertise Tools and Languages:• Telecommunications and IPTV Systems • NetCracker, NetProvision, Insight (IISY), HDM (Nokia),Trouble Ticketing• Test/QA Lead • Click Schedule, FieldLink, AMDOCS-Ordering, Billing - Product Catalog• Project Management • IBM - TOCP, Mediaroom, MediaFirst TV3 platform (Ericsson)• Software Testing and Defect Management • HP QC 10, JIRA, TDP, Accenture Test Estimation Tool• Lead to Order and Order to Cash Management • Caliber RM (Requirement Gathering),Confluence, Clear Quest• Service Provisioning and Activation • Worksoft Certify, QTP, Java, Selenium, SQL, HTML, XML• Business Analysis (Requirement Management) • Splunk, WinSCP, SOAP UI, Kibana, Wireshark• Automation • Proficiency in MS Office (Word, Excel, PowerPoint and Visio)
 
 
-Accomplishment:
-• Test Lead with more than 6.5 years of professional experience in TELECOM domain specificallyin OSS applications including Ordermanagement, Inventory Management, Service provisioning, Service Activation and ServiceAssurance• An accomplished QA Lead with extensive experience in Functional Testing, Regression Testing,Unit Testing, Integration Testing, Test strategydefinition, Test Plan, Test Estimation, Test Cases/Scenarios, Test Procedures, Results anddocumentation• Proficient in Project management, requirements definition, software testing, SDLC, STLC, Agile,V-Model and Waterfall test methodologies• Worked as primary liaison with Business, QA, Development teams and Vendors for major, minorand emergency releases• Proficient in testing Web Based applications, Web Services, SOAP UI, High Speed Broadbandand IPTV Testing (Modem, STBs, DSLAMs)• Expertise in handling and coordinating defect triage meetings, project meeting with variousstakeholders in onshore-offshore model• A certified business analyst from BCS, The Chartered Institute for IT with proficiency inrequirement management and project definition
+LatestCompany:
+Accenture
 
 
-Name:
-Manjari Singh
+Location:
+Bengaluru
+
+
+To:
+Present
 
 
 LatestRole:
@@ -32,9 +32,9 @@ From:
 December 2017
 
 
-Education:
-B.TECH. in Information TechnologyAmity University
+Name:
+Manjari Singh
 
 
-LatestCompany:
-Accenture
+Accomplishment:
+• Test Lead with more than 6.5 years of professional experience in TELECOM domain specificallyin OSS applications including Ordermanagement, Inventory Management, Service provisioning, Service Activation and ServiceAssurance• An accomplished QA Lead with extensive experience in Functional Testing, Regression Testing,Unit Testing, Integration Testing, Test strategydefinition, Test Plan, Test Estimation, Test Cases/Scenarios, Test Procedures, Results anddocumentation• Proficient in Project management, requirements definition, software testing, SDLC, STLC, Agile,V-Model and Waterfall test methodologies• Worked as primary liaison with Business, QA, Development teams and Vendors for major, minorand emergency releases• Proficient in testing Web Based applications, Web Services, SOAP UI, High Speed Broadbandand IPTV Testing (Modem, STBs, DSLAMs)• Expertise in handling and coordinating defect triage meetings, project meeting with variousstakeholders in onshore-offshore model• A certified business analyst from BCS, The Chartered Institute for IT with proficiency inrequirement management and project definition

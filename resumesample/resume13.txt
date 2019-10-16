@@ -1,27 +1,27 @@
 
 
-Location:
-Pehowa
-
-
-To:
-Present
-
-
 Contact:
 indeed.com/r/Jatin-Arora/a124b9609f62fbcb
+
+
+Education:
+B.Sc in Computer ScienceKurukshetra University
 
 
 Skills:
 Competencies Developed:Selenium WebDriver C# ADO.Net SQL HTML, CSSJava Unix Quality Center Atlassian JIRA MTMMicrosoft SQL Server Visual Studio Rapid SQL Toad ConfluenceEclipse Visual Studio BitBucket NUnit MindMapsTesting Skills:SDLC, STLC, Test Planning, Requirement Analysis, Agile Methodology, DevOps Methodology,Scrum, Waterfall, Software Quality, Defect Tracking, Regression Testing, System Testing
 
 
-Accomplishment:
-• Automated the Test data creation using Selenium as value added service for a client which isbeing used by the client and bought 30% cost reduction in data setup.• Developed Test Case Generator as value added services for client which reduced time and costby45% being spent on data creation and provide more productivity.• Developed an Infosys Go Safe Android App during participation in Global Hackathon• Excellent communications skills and able to liaise with key customer contacts and vendors toresolve software issues.• Having excellent problem solving and analytical skills
+LatestCompany:
+CRD (Capital Group of Companies)
 
 
-Name:
-Jatin Arora
+Location:
+Pehowa
+
+
+To:
+Present
 
 
 LatestRole:
@@ -32,5 +32,9 @@ From:
 February 2017
 
 
-LatestCompany:
-CRD (Capital Group of Companies)
+Name:
+Jatin Arora
+
+
+Accomplishment:
+3.6 years of experience in Automation Testing tools like Selenium (C#), Java, dot Net Technologyand other Testing tools like JIRA, QC. Proficient in testing on Client/Server and Web-based withgood experience in creating the Test Plan and testing framework• Experience in SQA including Selenium with data driven framework.• Experience in working on C# and dot net technologies.• Automated the Test data creation using Selenium as value added service for a client which isbeing used by the client and bought 30% cost reduction in data setup.• Developed Test Case Generator as value added services for client which reduced time and costby45% being spent on data creation and provide more productivity.• Developed an Infosys Go Safe Android App during participation in Global Hackathon• Excellent communications skills and able to liaise with key customer contacts and vendors toresolve software issues.• Having excellent problem solving and analytical skills

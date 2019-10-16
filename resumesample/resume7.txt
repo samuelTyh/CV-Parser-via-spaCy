@@ -1,28 +1,24 @@
 
 
-Location:
-Bangalore
-
-
 Contact:
 indeed.com/r/Shreyanshu-Gupta/6bd08d76c29d63c7
+
+
+Education:
+B.Tech in Computer ScienceKalinga Institute of Industrial Technology
 
 
 Skills:
 ANDROID (Less than 1 year), Git (Less than 1 year), HTML (Less than 1 year), PHP (Less than1 year), SQL (Less than 1 year), Java (Less than 1 year), C, Velocity (Less than 1 year), C++,Database Management (Less than 1 year)LINKShttps://www.linkedin.com/in/shreyanshu-gupta-135176103/CERTIFICATIONS/LICENSESOnline Content WriterJuly 2016 to PresentWas Online Content Writer for Greymeter.com.Android Application DevelopmentJune 2015 to PresentLearned to create basic Android Apps using Eclipse and Android Studio.PUBLICATIONSBlog Migration from TypePad to Amazonhttps://www.amazonbookreview.comJuly 2017Amazon owns a blog amazonbookreview.com which is used to improve the book sales inamazon.com. It was recently hosted in a 3rd party blogging platform TypePad.- The project required to find a platform which satisfies all the requirements and transferall TypePad content to the Amazon owned platform while maintaining its functionalities andcompatibility.- Used Velocity Templating Language, Java, Amazon Tools and Many Blogging Platforms.Mobile Widget DisparityJuly 2017https://www.linkedin.com/in/shreyanshu-gupta-135176103/https://www.amazonbookreview.com- Due to some recent changes in Amazon configuration files, there was content disparity betweenbook description of mobile and desktop in millions of products.- The project required to find the reason for disparity and then find a solution that doesn’t affectother features & is also expandable.- Used Java, configuration files and Amazon Tools.Physical to Amazon Video ConversionJuly 2017- To promote Amazon Video Over Physical Video source (DVD, Blu Ray), certain features werecreated like Popup Window and messages above Add to Cart button.- This project required to create UI for each of the features and check whether it satisfies all thecriteria.- Used Java, JSP, configuration files and bean creationADDITIONAL INFORMATIONTECHNICAL SKILLS* Programming language: C, SQL, Core Java, Android, Velocity* Web Development - PHP, Basic knowledge of HTML* Basic knowledge of GIT Version Control System
 
 
-Name:
-Shreyanshu Gupta
+LatestCompany:
+Amazon
 
 
 LatestRole:
 Software Development Engineer
 
 
-Education:
-B.Tech in Computer ScienceKalinga Institute of Industrial TechnologyJuly 2013 to April 2017
-
-
-LatestCompany:
-Amazon
+Name:
+Shreyanshu Gupta

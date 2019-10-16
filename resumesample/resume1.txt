@@ -1,23 +1,27 @@
 
 
-Location:
-Bengaluru
-
-
-To:
-Present
-
-
 Contact:
 indeed.com/r/Kavya-U/049577580b3814e6
+
+
+Education:
+Master of Science in Technology in TechnologySchool Of Information Sciences
 
 
 Skills:
 coding (Less than 1 year), HDL (Less than 1 year), Microsoft office (Less than 1 year), MSOFFICE (Less than 1 year), UART (Less than 1 year)ADDITIONAL INFORMATIONTechnical Skills• Verilog HDL• Knowledge of RTL coding, FSM based designs.• Understanding of UART, AMBA protocol• Platforms: Microsoft office, Libreoffice
 
 
-Name:
-Kavya U.
+LatestCompany:
+Accenture
+
+
+Location:
+Bengaluru
+
+
+To:
+Present
 
 
 LatestRole:
@@ -28,9 +32,5 @@ From:
 December 2017
 
 
-Education:
-Master of Science in Technology in TechnologySchool Of Information SciencesVLSI Designhttps://www.indeed.com/r/Kavya-U/049577580b3814e6?isid=rex-download&ikw=download-top&co=INManipal Academy of Higher EducationBachelor of Engineering in EngineeringSrinivas Institute of Technology
-
-
-LatestCompany:
-Accenture
+Name:
+Kavya U.

@@ -1,24 +1,27 @@
 
 
-Location:
-Bishnupur
-Oracle
-
-
-To:
-Present
-
-
 Contact:
 indeed.com/r/Srabani-Das/152269fb5b986c26
 
 
+Education:
+B-tech in Electronics and TelecommunicationCollege of engineering
+
+
 Skills:
-RETAIL (2 years), RETAIL MARKETING (2 years), TERADATA (2 years), ACCEPTANCE TESTING(Less than 1 year), APS (Less than 1 year)ADDITIONAL INFORMATIONSKILLShttps://www.indeed.com/r/Srabani-Das/152269fb5b986c26?isid=rex-download&ikw=download-top&co=INhttps://www.indeed.com/r/Srabani-Das/152269fb5b986c26?isid=rex-download&ikw=download-top&co=IN• Databases (Primary): Teradata, Oracle (SQL, PL/SQL)• OS: Unix, Windows, Mac OS• Teradata Tools & Utilities: BTEQ, Muti Load, Fast Load, Tpump, TPT.• Reporting Tools: BO Reporting, Crystal Report, Universe design tool, BOBJ Migration tool• Other Tools: Radar, Espresso, SQL Workbench, SQL Developer, ETL Metadata UI, iCheck, Globaldeployment tool, Ms office, Power Point, Ms Excel, Workload Automation.• Applications: Central Station, GitLab, SVN.KEY PROJECTS:LeaderboardProject LeaderboardClient AppleDescription- Leader Board is an iPad based application for single Point of entry to GBI Retail mobileapplications. It is to provide automated and centralized access to different apps. Its a location toget key actionable metrics around Sales & Services related transactions of Apple retail store. Itis widely used by all managers and employees in Apple stores.- This is a diverse application which has 4 sub applications:Store Pulse, Benchmark, Session and RedZone Mobile.- Real-time as well as historical data are displayed in this application.Peak Team Size 6Roles and Responsibility- Working as a database developer in this project.- Worked in complete revamp of Leader board application and done multiple enhancements todevelop logic for multiple sales and service related metrics.- Created design documents and Logical Data flow Model from source study according to Businessrequirements.- Created multiple Replication setup process (Export and Load) using Apple ETL framework tool.- Worked on Business Objects, SAP Crysral report and universe for report creation andmodifcation.- Coding and Support for all phases of Testing- Implementation in production for project go live.- Production support till warranty phase.- Transition KT to APS team.Technology Used Teradata, Oracle, BO Universe and Reporting, Crystal Report, Unix and Autosys,ETL Framework.Reporting Tools Used Business Objects, BOBJ Migration tool, Universe design tool, SAP CrystalReportApple Retail ExpansionProject Apple Retail ExpansionClient AppleDescription- As part of New Apple Store/Country Expansion, Store/Market/Country level metadata setups aredone with real-time and history performance reports are sent to business users periodically.Peak Team Size 3Roles and Responsibility- Involved in Designing technical specification docs and gathering functional requirements.- Carried out DB changes alone with Unit, Integration, Functional, Regression testing and testcase preparation of all the modules impacted for it.- Implemented Reporting side changes for new Store expansion.Technology Used Teradata, Oracle, BO Reporting, Crystal Report, Unix and Autosys, ETLFramework.Reporting Tools Used Business Objects, SAP Crystal ReportGenius & Forum DashboardProject Genius & Forum DashboardClient AppleDescription- This Dashboards acts as a reporting solution for Concierge - the service oriented wing of Apple.- Genius and Forum Dashboard has been developed as the reporting layer to report the GeniusBar, Workshops/events, Repair related metrics.- Helps the store leaders to take decisions on the floor to improve customer experience analyzingthe trend of the store.- Store leaders can plan for scheduling of employees based on the demand of symptoms/categories.Peak Team Size 6Roles and Responsibility- Understanding the functional requirement- Design Document preparation.- Coding and Units testing.- Preparing test cases and conduct Integration Testing- Support for User Acceptance Testing- Implementation- SupportTechnology Used Teradata, Oracle, Unix and Autosys, ETL Framework.Reporting Tools Used Business Objects, BOBJ Migration tool, Universe design tool
+RETAIL (2 years), RETAIL MARKETING (2 years), TERADATA (2 years), ACCEPTANCE TESTING(Less than 1 year), APS (Less than 1 year)ADDITIONAL INFORMATIONSKILLShttps://www.indeed.com/r/Srabani-Das/152269fb5b986c26?isid=rex-download&ikw=download-top&co=INhttps://www.indeed.com/r/Srabani-Das/152269fb5b986c26?isid=rex-download&ikw=download-top&co=IN• Databases (Primary): Teradata, Oracle (SQL, PL/SQL)• OS: Unix, Windows, Mac OS• Teradata Tools & Utilities: BTEQ, Muti Load, Fast Load, Tpump, TPT.• Reporting Tools: BO Reporting, Crystal Report, Universe design tool, BOBJ Migration tool• Other Tools: Radar, Espresso, SQL Workbench, SQL Developer, ETL Metadata UI, iCheck, Globaldeployment tool, Ms office, Power Point, Ms Excel, Workload Automation.• Applications: Central Station, GitLab, SVN.
 
 
-Name:
-Srabani Das
+LatestCompany:
+Oracle, Business Objects
+
+
+Location:
+Bishnupur
+
+
+To:
+Present
 
 
 LatestRole:
@@ -29,9 +32,5 @@ From:
 June 2015
 
 
-Education:
-B-tech in Electronics and TelecommunicationCollege of engineering
-
-
-LatestCompany:
-Oracle, Business Objects
+Name:
+Srabani Das

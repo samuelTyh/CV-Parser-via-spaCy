@@ -1,23 +1,27 @@
 
 
-Location:
-Rajapalaiyam
-
-
-To:
-Present
-
-
 Contact:
 indeed.com/r/Karthihayini-C/627254c443836b3c
+
+
+Education:
+B E in Production EngineeringVelammal Engineering College
 
 
 Skills:
 Destructive Testing (Less than 1 year), FORGE (Less than 1 year), Non-Destructive (Less than 1year), Non-Destructive Testing (Less than 1 year), quality control (Less than 1 year)ADDITIONAL INFORMATIONAREAS OF INTEREST1. Strength of materials2. Engineering statistics and quality controlINDUSTRIAL VISITS• BAY FORGE, Madurantakam• ASHOK LEYLAN, Ennore• CARBORUNDUM, Thiruvottiyur• BONFIGLIOLI, ThirumudivakkamIN-PLANT TRAININGS & WORKSHOPS• Attended in-plant training on security division at "Minda Corporation Limited", Chennai.• Attended in-plant training in "BHEL", Ranipet.• Attended workshop on "Aero Modeling" conducted at Consto UAV Technologies• Attended workshop on "Non-Destructive Testing" conducted at Velammal engineering College,Chennai.PERSONAL QUALIFICATIONS:• Ability to quick grasp the concepts• Flexible• Hard working• Consistent
 
 
-Name:
-Karthihayini C
+LatestCompany:
+Infosys Limited
+
+
+Location:
+Rajapalaiyam
+
+
+To:
+Present
 
 
 LatestRole:
@@ -28,9 +32,5 @@ From:
 December 2016
 
 
-Education:
-B E in Production EngineeringVelammal Engineering College
-
-
-LatestCompany:
-Infosys Limited
+Name:
+Karthihayini C

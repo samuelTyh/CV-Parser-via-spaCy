@@ -1,23 +1,27 @@
 
 
-Location:
-Gurgaon
-
-
-To:
-November 2017
-
-
 Contact:
 indeed.com/r/Mohini-Gupta/08b5b8e1acd8cf07
+
+
+Education:
+B.techhttps://www.indeed.com/r/Mohini-Gupta/08b5b8e1acd8cf07?isid=rex-download&ikw=download-top&co=INKIIT college of Engg.
 
 
 Skills:
 active directory, iis, sccm, dhcp, sql, wsus, dnsADDITIONAL INFORMATIONComputer Skills● MS Office Tools: MS Excel, MS Word, MS Power Point.● Hands on experience on all versions of Windows.● Sound knowledge of internet and networking.● Coding Languages: C, C++, Java.
 
 
-Name:
-Mohini Gupta
+LatestCompany:
+Microsoft
+
+
+Location:
+Gurgaon
+
+
+To:
+November 2017
 
 
 LatestRole:
@@ -28,9 +32,5 @@ From:
 July 2015
 
 
-Education:
-B.techhttps://www.indeed.com/r/Mohini-Gupta/08b5b8e1acd8cf07?isid=rex-download&ikw=download-top&co=INKIIT college of Engg.
-
-
-LatestCompany:
-Microsoft
+Name:
+Mohini Gupta

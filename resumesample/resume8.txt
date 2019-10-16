@@ -1,13 +1,5 @@
 
 
-Location:
-Mumbai
-
-
-To:
-Present
-
-
 Contact:
 indeed.com/r/Snehal-Jadhav/005e1ab800b4cb42
 
@@ -16,8 +8,16 @@ Skills:
 Architecture (Less than 1 year), BGP (Less than 1 year), DHCP (Less than 1 year), DNS (Lessthan 1 year), EIGRP (Less than 1 year)ADDITIONAL INFORMATIONTechnical Skills• Layer 2 Technologies like VTP, VLAN, STP, and RSTP.• OSI Architecture, TCP/IP Module• TCP/UDP, DHCP, DNS• MP-BGP IPv4/IPv6, VPNv4, VPNv6, RT-Filter, IPv6-Multicats.• Access-List, Prefix-List, Distribution List, QOS.• MPLS, L2/L3 VPN.• GRE, IPSec, DMVPN.• FTP-Active/Passive, TFTP.• Configuring and Troubleshooting L2 and L3 Ether channels on Cisco 3550, 3560, 2950 switches.• IP Addressing, VLSM, Summarization, understanding Lease Line and Dedicated Lease Lines.https://www.indeed.com/r/Snehal-Jadhav/005e1ab800b4cb42?isid=rex-download&ikw=download-top&co=IN• Configuring HSRP, VRRP, GLBP on Cisco Routers and Switches.• VTP & Frame Tagging protocols ISL, Dot1q• NAT, PAT, NAT-T.• Strong skills in Configuring Cisco Routers (ASR901, ASR903, ASR900) using ISIS, OSPF, EIGRPand BGP. A good understanding of working on Small to High E1nd Routers and Switches.• Comprehensive understanding of networking concepts pertaining to LAN, WAN, Security, ITcommunication, WAN protocols, Networking devices administration and maintenance in multi-platform environments.• Strong hands-on technical knowledge of Microsoft Operating Systems (Network & Desktop),establishing & managing networks, Cisco Routers, Hardware clients & switches.• Expertise in managing medium to large networks with Routers, Switches.
 
 
-Name:
-Snehal Jadhav
+LatestCompany:
+Cisco
+
+
+Location:
+Mumbai
+
+
+To:
+Present
 
 
 LatestRole:
@@ -28,5 +28,5 @@ From:
 February 2017
 
 
-LatestCompany:
-Cisco
+Name:
+Snehal Jadhav
