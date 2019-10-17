@@ -1,0 +1,49 @@
+
+For Entity Name
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
+
+
+For Entity Location
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
+
+
+For Entity Contact
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
+
+
+For Entity Company
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
+
+
+For Entity TimePeriod
+Accuracy : 96.1373%
+Precision : 0.9741
+Recall : 0.9614
+F-score : 0.9677
+
+
+For Entity Degree
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
+
+
+For Entity College
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
+

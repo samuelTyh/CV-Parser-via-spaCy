@@ -24,14 +24,13 @@ def timer(method):
 class NERspacy(object):
 
     dataturks_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project.json"
-    test_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project_test.json"
-    n_iter = 60
+    testing_data_proportion = 0.3
+    n_iter = 100
     not_improve = 10
 
-    @staticmethod
-    def convert_dataturks_to_spacy(filepath):
+    def convert_dataturks_to_spacy(self, filepath):
         try:
-            training_data = []
+            all_data = []
             with open(filepath, 'r') as f:
                 lines = f.readlines()
 
@@ -61,14 +60,19 @@ class NERspacy(object):
                             if rstrip_diff != 0:
                                 point_end = point_end - rstrip_diff
                             entities.append((point_start, point_end + 1, label))
-                training_data.append((text, {"entities": entities}))
-            return training_data
+                all_data.append((text, {"entities": entities}))
+            n_sample = round(self.testing_data_proportion * len(all_data))
+            testing_data = random.sample(all_data, n_sample)
+            training_data = [data for data in all_data if data not in testing_data]
+
+            return training_data, testing_data
+
         except Exception as e:
             logging.exception("Unable to process " + filepath + "\n" + "error = " + str(e))
             return None
 
     @timer
-    def train_spacy(self, train_data, dropout=0.2, display_freq=1):
+    def train_spacy(self, training_data, testing_data, dropout=0.2, display_freq=1):
         nlp = spacy.blank('en')  # create blank Language class
         # create the built-in pipeline components and add them to the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -77,7 +81,7 @@ class NERspacy(object):
             nlp.add_pipe(ner, last=True)
 
         # add labels
-        for _, annotations in train_data:
+        for _, annotations in training_data:
             for ent in annotations.get('entities'):
                 ner.add_label(ent[2])
 
@@ -92,9 +96,9 @@ class NERspacy(object):
 
             for itn in range(self.n_iter):
                 print("Starting iteration {}".format(itn + 1))
-                random.shuffle(train_data)
+                random.shuffle(training_data)
                 losses = {}
-                batches = minibatch(train_data, size=compounding(4., 16., 1.001))
+                batches = minibatch(training_data, size=compounding(4., 32., 1.001))
                 for batch in batches:
                     text, annotations = zip(*batch)
                     nlp.update(
@@ -110,8 +114,6 @@ class NERspacy(object):
                 if losses["ner"] < losses_best:
                     early_stop = 0
                     losses_best = int(losses["ner"])
-                    with nlp.use_params(optimizer.averages):
-                        nlp.to_disk(os.getcwd()+"/api/model")
                 else:
                     early_stop += 1
 
@@ -119,17 +121,20 @@ class NERspacy(object):
                       "it's {early_stop} now.".format(not_improve=self.not_improve, early_stop=early_stop))
 
                 if early_stop >= self.not_improve:
-                    print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
                     break
-                if itn == self.n_iter:
-                    print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
+
+            print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
+
+            model_filepath = os.getcwd()+"/models/model_ner_{}".format(round(losses_best, 2))
+            with nlp.use_params(optimizer.averages):
+                nlp.to_disk(model_filepath)
 
         # test the model and evaluate it
-        examples = self.convert_dataturks_to_spacy(self.test_JSON_FilePath)
-        c = 0
+        examples = testing_data
+        n_resume = 0
         for text, annot in examples:
 
-            f = open("resumesample/resume" + str(c) + ".txt", "w")
+            f = open("test_outcome/resume{}.txt".format(n_resume), "w")
             doc_to_test = nlp(text)
             d = {}
             for ent in doc_to_test.ents:
@@ -143,37 +148,38 @@ class NERspacy(object):
                 f.write(i + ":" + "\n")
                 for j in set(d[i]):
                     f.write(j.replace('\n', '') + "\n")
-            d = {}
+            output = {}
             for ent in doc_to_test.ents:
-                d[ent.label_] = [0, 0, 0, 0, 0, 0]
+                output[ent.label_] = [0, 0, 0, 0, 0, 0]
             for ent in doc_to_test.ents:
                 doc_gold_text = nlp.make_doc(text)
                 gold = GoldParse(doc_gold_text, entities=annot.get("entities"))
                 y_true = [ent.label_ if ent.label_ in x else 'Not ' + ent.label_ for x in gold.ner]
                 y_pred = [x.ent_type_ if x.ent_type_ == ent.label_ else 'Not ' + ent.label_ for x in doc_to_test]
-                if d[ent.label_][0] == 0:
-                    # f.write("For Entity "+ent.label_+"\n")
-                    # f.write(classificatio n_report(y_true, y_pred)+"\n")
-                    (p, r, f, s) = precision_recall_fscore_support(
+                if output[ent.label_][0] == 0:
+                    precision, recall, fscore, support = precision_recall_fscore_support(
                         y_true, y_pred, average='weighted', labels=np.unique(y_pred))
-                    a = accuracy_score(y_true, y_pred)
-                    d[ent.label_][0] = 1
-                    d[ent.label_][1] += p
-                    d[ent.label_][2] += r
-                    d[ent.label_][3] += f
-                    d[ent.label_][4] += a
-                    d[ent.label_][5] += 1
-            c += 1
-        for i in d:
-            print("\n For Entity " + i + "\n")
-            print("Accuracy : " + str((d[i][4] / d[i][5]) * 100) + "%")
-            print("Precision : " + str(d[i][1] / d[i][5]))
-            print("Recall : " + str(d[i][2] / d[i][5]))
-            print("F-score : " + str(d[i][3] / d[i][5]))
+                    accuracy = accuracy_score(y_true, y_pred)
+                    output[ent.label_][0] = 1
+                    output[ent.label_][1] += precision
+                    output[ent.label_][2] += recall
+                    output[ent.label_][3] += fscore
+                    output[ent.label_][4] += accuracy
+                    output[ent.label_][5] += 1
+            n_resume += 1
+        with open("test_outcome/evaluation_report.txt", 'w') as f:
+            for name in output:
+                f.writelines("\nFor Entity " + name + "\n")
+                f.writelines("Accuracy : {}%\n".format(round((output[name][4] / output[name][5]) * 100, 4)))
+                f.writelines("Precision : {}\n".format(round(output[name][1] / output[name][5], 4)))
+                f.writelines("Recall : {}\n".format(round(output[name][2] / output[name][5], 4)))
+                f.writelines("F-score : {}\n\n".format(round(output[name][3] / output[name][5], 4)))
+
+        return model_filepath
 
 
-def predict_spacy(content):
-    nlp = spacy.load(os.getcwd() + "/api/model")
+def predict_spacy(content, model_filepath):
+    nlp = spacy.load(model_filepath)
     doc = nlp(content)
     output = dict()
     for ent in doc.ents:
