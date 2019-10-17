@@ -1,43 +1,79 @@
 
 
-Title:
-Subject matter expert
-Subject matter Expert
+Years:
+3 years
+9 years
+1 year
+2 years
+
+
+College:
+Sri Venkateshwara College of Engineering
 
 
 Location:
 Chennai
+Oracle
 
 
-Contact:
-indeed.com/r/Asish-Ratha/853988e0e0e236a3
-
-
-Others:
-ADDITIONAL INFORMATIONSKILLSInvoice processing, Team handling, new joiners training.sap posting,vendor call attend andresolve the issue,meet SLA tat,working with client tool.https://www.indeed.com/r/Asish-Ratha/853988e0e0e236a3?isid=rex-download&ikw=download-top&co=IN
-
-
-Years:
-5 years
-4 years
-
-
-Company:
-Accenture
-Invoice (
+Title:
+Technology Analyst
+Software Test Analyst
+Software QA Engineer
 
 
 Skills:
-TRAINING
+SQL Queries
+SQL
+ORACLE
+AGILEMethodologies
+Jmeter
+Servlets
+Soap UI
+API (
+JIRA
+testing
+AGILE Methodologies
+Selenium WebDriver Automated testing
+TESTING
+WebDriver
+Selenium Webdriver
+JAVA
+SunTracker
+HP QualityCenter
+Junit
+Java
+JUNIT
+Cucumber
+Selenium WebDriver
+Selenium
+Maven
+MySQL
+
+
+Contact:
+indeed.com/r/Dhanushkodi-Raj/cf31bbac6c5a5d29
+
+
+Others:
+ADDITIONAL INFORMATIONTECHNICAL SKILLSAutomation Testing Tools: Selenium WebDriver, Cucumber, Maven, Jenkins, CyaraLanguages/Frameworks: JAVA, Data Driven, Hybrid, Page Object model, SOAP UI, JUnit, TestNG(TDD), Gherkin language (BDD), Cucumber, Log 4jDefect Tracking Tools: JIRA, HP ALMAPI Webservices Automation Skills: SOAP, REST, HttpClient, SOAP UI, XML, Jmeter, PostmanTest Management Tools: HP ALM, Confluence pageRDBMS: MySQL, Oracle, Mongo DBSource Control Management: SVN, GITOperating Systems: WindowsDomain Knowledge: E-commerce, Financial, Banking, Telecom, Billinghttps://www.linkedin.com/in/dhanushkodi-raj-a190a0155
 
 
 Degree:
-Berhampur university, Khallikote autonomous college -  Brahmapur, Orissa
-
-
-Name:
-Asish Ratha
+Bachelor's in Computer Science
 
 
 TimePeriod:
-March 2012 to Present
+June 2012 to December 2012
+January 2009 to October 2010
+January 2013 to June 2015
+October 2010 to May 2012
+June 2015 to Present
+
+
+Name:
+Dhanushkodi Raj
+
+
+Company:
+Infosys Limited

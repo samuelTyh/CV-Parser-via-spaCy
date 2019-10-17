@@ -1,50 +1,34 @@
 
 
-Title:
-Career Contour -
-Career Contour
-Security incident and event management (SIEM) is the process of identifying, monitoring andanalysing security events or incidents within a real-time IT environment. It provides centralizedview of the security scenario of an IT infrastructure
-Security Analyst
-
-
-Location:
-Hyderabad
-Splunk
+Years:
+4 years
+5 years
 
 
 College:
-Jawaharlal Nehru Technological University
+Berhampur university,
 
 
-Contact:
-indeed.com/r/Pradeep-
-
-
-Others:
-ADDITIONAL INFORMATIONTechnologies: McAfee SIEM, Arc sight, HP Service manager.Description:Security incident and event management (SIEM) is the process of identifying, monitoring andanalysing security events or incidents within a real-time IT environment. It provides centralizedview of the security scenario of an IT infrastructure.Roles and Responsibilities:• Have Experience in device integration, alarm creation in ESM.• Having Experience on analysing FIREWALL events.• Checking health status for all devices in ESM.• Working in Offshore SOC team, Monitoring of SOC events, detecting and preventing theIntrusion attempts.• Hands-on experience monitoring the SIEM tool.• Provide level 2 supports to manage SIEM components.• Creating reports as per client requirement.• Analysing daily, weekly and monthly reports.• Creating case for the suspicious issue and forwarding it to Onsite SOC team for furtherinvestigation.• Monitoring the events on SIEM tool.• Creating the tickets in ticketing tool.https://www.indeed.com/r/Pradeep-Kumar/96485546eadd9488?isid=rex-download&ikw=download-top&co=INhttps://www.indeed.com/r/Pradeep-Kumar/96485546eadd9488?isid=rex-download&ikw=download-top&co=IN• Finding false positive, fine tuning and escalating Security events.
-
-
-Years:
-2 years
-1 year
-
-
-Company:
-Network Security
-Infosys
+Location:
+Chennai
 
 
 Skills:
-SIEM
+Invoice (5 years)
+TRAINING
 
 
-Degree:
-B- Tech
-
-
-Name:
-Pradeep Kumar
+Contact:
+indeed.com/r/Asish-Ratha/853988e0e0e236a3
 
 
 TimePeriod:
-March 2015 to Present
+March 2012 to Present
+
+
+Name:
+Asish Ratha
+
+
+Company:
+Accenture

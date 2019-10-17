@@ -2,18 +2,30 @@ import os
 import logging
 import json
 import random
+import time
 import spacy
 import numpy as np
-from sklearn.metrics import precision_recall_fscore_support
 from spacy.gold import GoldParse
+from spacy.util import minibatch, compounding
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import accuracy_score
+
+
+def timer(method):
+    def timed(*args, **kw):
+        ts = time.time()
+        result = method(*args, **kw)
+        te = time.time()
+        print("Completed in {} seconds".format(int(te - ts)))
+        return result
+    return timed
 
 
 class NERspacy(object):
 
     dataturks_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project.json"
     test_JSON_FilePath = os.getcwd() + "/dataturks_JSON_FilePath/NERspacy_project_test.json"
-    n_iter = 50
+    n_iter = 60
     not_improve = 10
 
     @staticmethod
@@ -55,7 +67,8 @@ class NERspacy(object):
             logging.exception("Unable to process " + filepath + "\n" + "error = " + str(e))
             return None
 
-    def train_spacy(self, train_data):
+    @timer
+    def train_spacy(self, train_data, dropout=0.2, display_freq=1):
         nlp = spacy.blank('en')  # create blank Language class
         # create the built-in pipeline components and add them to the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
@@ -78,17 +91,22 @@ class NERspacy(object):
             early_stop = 0
 
             for itn in range(self.n_iter):
-                print("Starting iteration {}".format(itn))
+                print("Starting iteration {}".format(itn + 1))
                 random.shuffle(train_data)
                 losses = {}
-                for text, annotations in train_data:
+                batches = minibatch(train_data, size=compounding(4., 16., 1.001))
+                for batch in batches:
+                    text, annotations = zip(*batch)
                     nlp.update(
-                        [text],  # batch of texts
-                        [annotations],  # batch of annotations
-                        drop=0.2,  # dropout - make it harder to memorise data
+                        text,  # batch of texts
+                        annotations,  # batch of annotations
+                        drop=dropout,  # dropout - make it harder to memorise data
                         sgd=optimizer,  # callable to update weights
                         losses=losses)
-                print(losses)
+
+                if itn % display_freq == 0:
+                    print("Iteration {} Loss: {}".format(itn + 1, losses))
+
                 if losses["ner"] < losses_best:
                     early_stop = 0
                     losses_best = int(losses["ner"])
@@ -161,7 +179,9 @@ def predict_spacy(content):
     for ent in doc.ents:
         output[ent.label_] = []
     for ent in doc.ents:
-        output[ent.label_].append(ent.text)
+        if ent.text not in output[ent.label_]:
+            output[ent.label_].append(ent.text)
+        pass
     print(output)
 
     with open("prediction/ner_prediction.json", "w") as f:

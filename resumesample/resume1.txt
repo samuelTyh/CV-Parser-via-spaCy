@@ -1,62 +1,40 @@
 
 
-Title:
-Mostly worked as
-Program Description
-Desktop Support
-Access Management Team
-Backup Administrator
+Years:
+1 year
+2 years
 
 
 Location:
-Coimbatore
-Pilani
-Chennai
-Mumbai
 Hyderabad
 
 
-College:
-Bishop Ambrose College
-State Board
-BITS Pilani
-Backup Administrator
+Title:
+Security Analyst
+
+
+Skills:
+Splunk
+Network Security
+SIEM
+McAfee ESM
 
 
 Contact:
-indeed.com/r/Prasanna-
+indeed.com/r/Pradeep-Kumar/96485546eadd9488
 
 
 Others:
-ADDITIONAL INFORMATIONSkill Set• Wide experience with EMC Legato Networker & Microsoft Data Protection Manager (Backup& Restoration)• Providing Technical, Functional and Operational Support to users in the implementation and useof Software Applications & Installation, Configuration, Troubleshooting of Backup Librariesand Server's.• Providing support for the process such as Incident/Problem/Service Request/Change.• Providing training, troubleshooting, technical advice and direction to other members of theteam.• Managing the Backup infrastructure to ensure all Service Level Agreements are met.• Managing and creating different types of the policies for the Backup jobs.• Monitoring daily Backup status, handling tape changes, troubleshooting of tape libraries anddrives, restoration of missing files/directories and other Backup related activities.• Scheduling the Backup's as per the change requirements by overriding the schedule as andwhen required.• DR restoration on a monthly basis for mission critical Servers and checking the data integrity.• Creating and maintaining process and procedures run book for data center processes.• Maintaining Backup data for a 24×7 office.• Working with offsite storage vendors for tapes.• Strong ability to organize and schedule tasks as per realistic actions plans.• Superior ability to work independently in a demanding environment.• Report Generation - Daily, weekly and monthly reports on Major Incidents.Technical Skills• In-depth knowledge in Configuration, Installation and Troubleshooting of Microsoft DataProtection Manager.• Have Knowledge in installing DPM and Central Console, upgrading, repairing, and uninstalling.• Experienced in DPM protection agent, and setting up protection for computers, servers, andworkloads.• Experienced in Troubleshooting DPM errors and issues.• In-depth troubleshooting of Backup and Restore failures on Windows.• Performed Data Restorations for Server, File System and/or Databases from the tape & disklibraries upon customer request in a calm and controlled fashion while maintaining consistentcommunication with the customer.• Performed an analysis of CPU/Memory/Disk Utilization for Critical Platforms/Server's.• Performed EOD Activities on SQL & Window's based Platforms.• Performed SQL & Oracle DB Backup's and Restoration.
-
-
-Company:
-HCL
-Microsoft
-Microsoft DPM
-MICROSOFT
-Mumbai
-EMC
-
-
-Degree:
-B.Sc in Computer Science
-MS in Systems Engineering in Systems Engineering
-HSC
-
-
-Name:
-Prasanna Ignatius
+ADDITIONAL INFORMATIONTechnologies: McAfee SIEM, Arc sight, HP Service manager.Description:Security incident and event management (SIEM) is the process of identifying, monitoring andanalysing security events or incidents within a real-time IT environment. It provides centralizedview of the security scenario of an IT infrastructure.Roles and Responsibilities:• Have Experience in device integration, alarm creation in ESM.• Having Experience on analysing FIREWALL events.• Checking health status for all devices in ESM.• Working in Offshore SOC team, Monitoring of SOC events, detecting and preventing theIntrusion attempts.• Hands-on experience monitoring the SIEM tool.• Provide level 2 supports to manage SIEM components.• Creating reports as per client requirement.• Analysing daily, weekly and monthly reports.• Creating case for the suspicious issue and forwarding it to Onsite SOC team for furtherinvestigation.• Monitoring the events on SIEM tool.• Creating the tickets in ticketing tool.https://www.indeed.com/r/Pradeep-Kumar/96485546eadd9488?isid=rex-download&ikw=download-top&co=INhttps://www.indeed.com/r/Pradeep-Kumar/96485546eadd9488?isid=rex-download&ikw=download-top&co=IN• Finding false positive, fine tuning and escalating Security events.
 
 
 TimePeriod:
-May 2015 to November 2017
-2004 to 2005
-September 2008 - December 2013Location:
-September 2008 to December 2013
-August 2008 to September 2008
-2005 to 2008
-2008 to 2012
-February 2014 to March 2014
-May 2015 to April 2018
+March 2015 to Present
+
+
+Name:
+Pradeep Kumar
+
+
+Company:
+Infosys
