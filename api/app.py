@@ -1,6 +1,7 @@
 import argparse
 import spacy_ner
 import pdf_extractor
+import config
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-M", "--model", help="filepath to store model")
@@ -8,13 +9,13 @@ parser.add_argument("-f", "--file", required=True, help="Original CV filepath")
 argument = parser.parse_args()
 
 
-def cvparser():
+def cvparser(test_size, n_iter, early_stopping):
 
     # Invoke class
-    ne = spacy_ner.NERspacy()
+    ne = spacy_ner.NERspacy(test_size, n_iter, early_stopping)
 
     # Get training data and testing data
-    train, test = ne.convert_dataturks_to_spacy(ne.dataturks_JSON_FilePath)
+    train, test = ne.convert_dataturks_to_spacy(ne.data)
 
     # Parse content from original CV
     cv_filepath = argument.file
@@ -32,4 +33,4 @@ def cvparser():
 
 
 if __name__ == "__main__":
-    cvparser()
+    cvparser(test_size=config.test_size, n_iter=config.n_iter, early_stopping=config.early_stopping)

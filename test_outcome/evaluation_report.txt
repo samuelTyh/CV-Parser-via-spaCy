@@ -1,4 +1,4 @@
-
+Testing data size: 21
 For Entity Name
 Accuracy : 100.0%
 Precision : 1.0
@@ -27,13 +27,6 @@ Recall : 1.0
 F-score : 1.0
 
 
-For Entity TimePeriod
-Accuracy : 96.1373%
-Precision : 0.9741
-Recall : 0.9614
-F-score : 0.9677
-
-
 For Entity Degree
 Accuracy : 100.0%
 Precision : 1.0
@@ -41,9 +34,23 @@ Recall : 1.0
 F-score : 1.0
 
 
-For Entity College
+For Entity Title
+Accuracy : 95.614%
+Precision : 0.9648
+Recall : 0.9561
+F-score : 0.9604
+
+
+For Entity Years
 Accuracy : 100.0%
 Precision : 1.0
 Recall : 1.0
 F-score : 1.0
+
+
+For Entity Skills
+Accuracy : 93.8596%
+Precision : 0.9442
+Recall : 0.9386
+F-score : 0.9412
 
