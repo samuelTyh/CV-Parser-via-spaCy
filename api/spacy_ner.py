@@ -100,7 +100,7 @@ class NERspacy(object):
                 print("Starting iteration {}".format(itn + 1))
                 random.shuffle(training_data)
                 losses = {}
-                batches = minibatch(training_data, size=compounding(4., 32., 1.001))
+                batches = minibatch(training_data, size=compounding(4., 32., 1.002))
                 for batch in batches:
                     text, annotations = zip(*batch)
                     nlp.update(
@@ -120,7 +120,7 @@ class NERspacy(object):
                     early_stop += 1
 
                 print("Training will stop early if value reached {not_improve}, "
-                      "it's {early_stop} now.".format(not_improve=self.not_improve, early_stop=early_stop))
+                      "it's {early_stop} now.\n".format(not_improve=self.not_improve, early_stop=early_stop))
 
                 if early_stop >= self.not_improve:
                     break
@@ -174,7 +174,7 @@ class NERspacy(object):
                     d[ent.label_][5] += 1
             n_resume += 1
         with open("test_outcome/evaluation_report.txt", 'w') as f:
-            f.writelines("Testing data size: {}".format(n_resume))
+            f.writelines("Testing data size: {}\n\n".format(n_resume))
             for name in d:
                 f.writelines("\nFor Entity {}\n".format(name))
                 f.writelines("Accuracy : {}%\n".format(round((d[name][4] / d[name][5]) * 100, 4)))
