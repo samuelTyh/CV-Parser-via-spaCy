@@ -1,4 +1,6 @@
-spacy==2.2.1
-numpy==1.17.2
 pdfminer.six==20181108
+Flask==1.1.1
+numpy==1.17.2
+spacy==2.2.1
+Werkzeug==0.16.0
 scikit_learn==0.21.3
