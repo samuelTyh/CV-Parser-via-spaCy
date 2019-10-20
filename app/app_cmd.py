@@ -1,5 +1,5 @@
 import argparse
-import spacy_ner
+import ner_trainer
 import pdf_extractor
 import config
 
@@ -12,7 +12,7 @@ argument = parser.parse_args()
 def cvparser(test_size, n_iter, early_stopping):
 
     # Invoke class
-    ne = spacy_ner.NERspacy(test_size, n_iter, early_stopping)
+    ne = ner_trainer.NERspacy(test_size, n_iter, early_stopping)
 
     # Get training data and testing data
     train, test = ne.convert_dataturks_to_spacy(ne.data)
@@ -29,7 +29,7 @@ def cvparser(test_size, n_iter, early_stopping):
     else:
         model_filepath = ne.train_spacy(train, test)
 
-    return spacy_ner.predict_spacy(content, model_filepath)
+    return ner_trainer.predict_spacy(content, model_filepath)
 
 
 if __name__ == "__main__":
