@@ -51,6 +51,12 @@ def upload_file():
             filepath = upload_file_to_s3(file, os.environ['AWS_S3_BUCKET'])
             resp = cvparser(filepath)
             return jsonify(resp)
+        # if file and allowed_file(file.filename):
+        #     filename = secure_filename(file.filename)
+        #     filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        #     file.save(filepath)
+        #     resp = cvparser(filepath)
+        #     return jsonify(resp)
     return render_template('upload.html')
 
 
