@@ -3,8 +3,8 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from werkzeug.utils import secure_filename
 from werkzeug.middleware.shared_data import SharedDataMiddleware
 
-import ner_trainer
-import pdf_extractor
+from app import ner_trainer
+from app import pdf_extractor
 
 UPLOAD_FOLDER = os.getcwd() + "/app/uploaded"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
