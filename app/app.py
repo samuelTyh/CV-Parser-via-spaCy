@@ -48,7 +48,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             file.filename = secure_filename(file.filename)
-            filepath = upload_file_to_s3(file, os.environ['AWS_S3_BUCKET'])
+            upload_file_to_s3(file, os.environ['AWS_S3_BUCKET'])
+            filepath = "https://%s.s3.amazonaws.com/%s".format(os.environ['S3_BUCKET_NAME'], file.filename)
             resp = cvparser(filepath)
             return jsonify(resp)
         # if file and allowed_file(file.filename):
