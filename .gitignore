@@ -1,3 +1,7 @@
 .idea/*
+__pycache__/
 .DS_Store
 pdf_sample/
+test_outcome/*.txt
+!evaluation_report.txt
+prediction/
