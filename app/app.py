@@ -1,18 +1,17 @@
 import os
-from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template, jsonify
+from flask import Flask, flash, request, redirect, render_template, jsonify
 from werkzeug.utils import secure_filename
 from werkzeug.middleware.shared_data import SharedDataMiddleware
 
 from app import ner_trainer
 from app import pdf_extractor
+from app.tools import upload_file_to_s3
 
-UPLOAD_FOLDER = os.getcwd() + "/app/uploaded"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.add_url_rule('/uploads/<filename>', 'uploaded_file',
                  build_only=True)
@@ -47,9 +46,8 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(filepath)
+            file.filename = secure_filename(file.filename)
+            filepath = upload_file_to_s3(file, os.environ['AWS_S3_BUCKET'])
             resp = cvparser(filepath)
             return jsonify(resp)
     return render_template('upload.html')
