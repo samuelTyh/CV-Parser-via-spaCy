@@ -127,7 +127,7 @@ class NERspacy(object):
 
             print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
 
-            model_filepath = os.getcwd()+"/models/model_ner_{}".format(round(losses_best, 2))
+            model_filepath = os.getcwd()+"/lib/model_ner_{}".format(round(losses_best, 2))
             with nlp.use_params(optimizer.averages):
                 nlp.to_disk(model_filepath)
 

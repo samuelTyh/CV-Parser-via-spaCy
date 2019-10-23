@@ -4,7 +4,6 @@ __pycache__/
 pdf_sample/
 test_outcome/*.txt
 !evaluation_report.txt
-data/
 prediction/
 models_lib/
 .env
