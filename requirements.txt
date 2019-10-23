@@ -5,3 +5,4 @@ spacy==2.2.1
 Werkzeug==0.16.0
 scikit_learn==0.21.3
 gunicorn==19.9.0
+boto3==1.10.0

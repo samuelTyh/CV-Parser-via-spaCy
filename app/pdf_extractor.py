@@ -2,7 +2,8 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
-from io import StringIO
+from io import StringIO, BytesIO
+from urllib.request import urlopen
 
 
 def extract_pdf_content(file):
@@ -20,6 +21,33 @@ def extract_pdf_content(file):
         for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages, password=password, caching=caching,
                                       check_extractable=True):
             interpreter.process_page(page)
+    mystr = outfp.getvalue()
+    device.close()
+    outfp.close()
+    return mystr
+
+
+def extract_pdf_content_url(url):
+    rsrcmgr = PDFResourceManager()
+    codec = 'utf-8'
+    outfp = StringIO()
+    laparams = LAParams()
+    device = TextConverter(rsrcmgr=rsrcmgr, outfp=outfp, codec=codec, laparams=laparams)
+    f = urlopen(url).read()
+    fp = BytesIO(f)
+    interpreter = PDFPageInterpreter(rsrcmgr, device)
+    password = ""
+    maxpages = 0
+    caching = True
+    pagenos = set()
+    for page in PDFPage.get_pages(fp,
+                                  pagenos,
+                                  maxpages=maxpages,
+                                  password=password,
+                                  caching=caching,
+                                  check_extractable=True):
+        interpreter.process_page(page)
+    fp.close()
     mystr = outfp.getvalue()
     device.close()
     outfp.close()

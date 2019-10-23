@@ -5,3 +5,5 @@ pdf_sample/
 test_outcome/*.txt
 !evaluation_report.txt
 prediction/
+models_lib/
+.env
