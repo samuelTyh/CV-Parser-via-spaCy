@@ -195,7 +195,7 @@ def predict_spacy(content, model_filepath):
         pass
     print(output)
 
-    with open("prediction/ner_prediction.json", "w") as f:
-        json.dump(output, f)
+    # with open("prediction/ner_prediction.json", "w") as f:
+    #     json.dump(output, f)
 
     return output
