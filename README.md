@@ -34,8 +34,8 @@ python version: 3.7.4
 ```
 
 ```
-cd /the/path/to/store/repo
 git clone https://github.com/samuelTyh/CVparser.git
+cd CVparser
 pip install -r requirements.txt
 ```
 
