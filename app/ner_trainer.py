@@ -37,6 +37,7 @@ class NERspacy(object):
                 lines = f.readlines()
 
             for line in lines:
+                line = line.lower()
                 data = json.loads(line)
                 text = data['content']
                 entities = []
@@ -100,7 +101,7 @@ class NERspacy(object):
                 print("Starting iteration {}".format(itn + 1))
                 random.shuffle(training_data)
                 losses = {}
-                batches = minibatch(training_data, size=compounding(4., 32., 1.002))
+                batches = minibatch(training_data, size=compounding(4., 32., 1.001))
                 for batch in batches:
                     text, annotations = zip(*batch)
                     nlp.update(
@@ -185,6 +186,7 @@ class NERspacy(object):
 
 def predict_spacy(content, model_filepath):
     nlp = spacy.load(model_filepath)
+    content = content.lower()
     doc = nlp(content)
     output = dict()
     for ent in doc.ents:
