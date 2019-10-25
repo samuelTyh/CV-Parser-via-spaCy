@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ### Configuration setting
 Set testing data size, iteration times, and early stopping times in `config.py`
 ```
-# default in config.py
+# default hyperparameter in config.py
 
 test_size = 0.3
 n_iter = 300
@@ -52,10 +52,10 @@ early_stopping = 50
 ### Train
 ```
 # predict without training
-$ python app/app_cmd.py -f file_you_want_to_parse.pdf -M lib/model_choose_optional/
+$ python app_cmd.py -f file_you_want_to_parse.pdf -M lib/model_choose_optional/
 
 # train model first then predict
-$ python app/app_cmd.py -f file_you_want_to_parse.pdf
+$ python app_cmd.py -f file_you_want_to_parse.pdf
 ```
 
 

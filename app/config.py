@@ -1,7 +1,8 @@
 class HyperParameter:
-    test_size = 0.3
-    n_iter = 300
-    early_stopping = 20
+    test_size = 0
+    n_iter = 500
+    early_stopping = 50
+    dropout = 0.3
 
 
 class FlaskConfig:
