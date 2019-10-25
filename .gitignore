@@ -5,5 +5,5 @@ pdf_sample/
 test_outcome/*.txt
 !evaluation_report.txt
 prediction/
-lib/
+lib/inactive_model/
 .env
