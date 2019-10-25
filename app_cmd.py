@@ -22,7 +22,7 @@ def cvparser(test_size, n_iter, early_stopping, dropout):
     content = pdf_extractor.extract_pdf_content(cv_filepath)
 
     with open(argument.file + '.txt', 'w') as f:
-        f.write(content.replace('\n', ''))
+        f.write(content.replace('\n', '.'))
 
     if argument.model:
         model_filepath = argument.model
@@ -31,7 +31,7 @@ def cvparser(test_size, n_iter, early_stopping, dropout):
 
     output = ner_trainer.predict_spacy(content, model_filepath)
 
-    if 'prediction' not in os.listdir():
+    if 'prediction' not in os.listdir(''):
         os.mkdir('prediction')
 
     with open("prediction/ner_prediction.json", "w") as f:
