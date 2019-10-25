@@ -30,6 +30,7 @@ class NERspacy(object):
         self.not_improve = early_stopping
 
     def convert_dataturks_to_spacy(self, filepath):
+        random.seed(0)
         try:
             all_data = []
             with open(filepath, 'r') as f:
@@ -74,13 +75,15 @@ class NERspacy(object):
             return None
 
     @timer
-    def train_spacy(self, training_data, testing_data, dropout=0.2, display_freq=1):
+    def train_spacy(self, training_data, testing_data, dropout, display_freq=1):
         nlp = spacy.blank('en')  # create blank Language class
         # create the built-in pipeline components and add them to the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
         if 'ner' not in nlp.pipe_names:
             ner = nlp.create_pipe('ner')
             nlp.add_pipe(ner, last=True)
+        else:
+            ner = nlp.get_pipe('ner')
 
         # add labels
         for _, annotations in training_data:
@@ -91,7 +94,7 @@ class NERspacy(object):
         other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
         with nlp.disable_pipes(*other_pipes):  # only train NER
             optimizer = nlp.begin_training()
-            print(">>>>>>>>>>  Training the model  <<<<<<<<<<")
+            print(">>>>>>>>>>  Training the model  <<<<<<<<<<\n")
 
             losses_best = 100000
             early_stop = 0
@@ -131,7 +134,8 @@ class NERspacy(object):
             with nlp.use_params(optimizer.averages):
                 nlp.to_disk(model_filepath)
 
-            self.validate_spacy(model=nlp, data=testing_data)
+            if testing_data:
+                self.validate_spacy(model=nlp, data=testing_data)
 
         return model_filepath
 
@@ -154,33 +158,35 @@ class NERspacy(object):
                 f.write(i + ":" + "\n")
                 for j in set(d[i]):
                     f.write(j.replace('\n', '') + "\n")
-            d = {}
+            evaluation_set = {}
             for ent in doc_to_test.ents:
-                d[ent.label_] = [0, 0, 0, 0, 0, 0]
+                evaluation_set[ent.label_] = [0, 0, 0, 0, 0, 0]
             for ent in doc_to_test.ents:
                 doc_gold_text = model.make_doc(text)
                 gold = GoldParse(doc_gold_text, entities=annot.get("entities"))
                 y_true = [ent.label_ if ent.label_ in x else 'Not ' + ent.label_ for x in gold.ner]
                 y_pred = [x.ent_type_ if x.ent_type_ == ent.label_ else 'Not ' + ent.label_ for x in doc_to_test]
-                if d[ent.label_][0] == 0:
+                if evaluation_set[ent.label_][0] == 0:
                     precision, recall, fscore, support = precision_recall_fscore_support(
                         y_true, y_pred, average='weighted', labels=np.unique(y_pred))
                     accuracy = accuracy_score(y_true, y_pred)
-                    d[ent.label_][0] = 1
-                    d[ent.label_][1] += precision
-                    d[ent.label_][2] += recall
-                    d[ent.label_][3] += fscore
-                    d[ent.label_][4] += accuracy
-                    d[ent.label_][5] += 1
+                    evaluation_set[ent.label_][0] = 1
+                    evaluation_set[ent.label_][1] += precision
+                    evaluation_set[ent.label_][2] += recall
+                    evaluation_set[ent.label_][3] += fscore
+                    evaluation_set[ent.label_][4] += accuracy
+                    evaluation_set[ent.label_][5] += 1
             n_resume += 1
         with open("test_outcome/evaluation_report.txt", 'w') as f:
             f.writelines("Testing data size: {}\n\n".format(n_resume))
-            for name in d:
+            for name in evaluation_set:
                 f.writelines("\nFor Entity {}\n".format(name))
-                f.writelines("Accuracy : {}%\n".format(round((d[name][4] / d[name][5]) * 100, 4)))
-                f.writelines("Precision : {}\n".format(round(d[name][1] / d[name][5], 4)))
-                f.writelines("Recall : {}\n".format(round(d[name][2] / d[name][5], 4)))
-                f.writelines("F-score : {}\n\n".format(round(d[name][3] / d[name][5], 4)))
+                f.writelines(
+                    "Accuracy : {}%\n".format(round((evaluation_set[name][4] / evaluation_set[name][5]) * 100, 4))
+                )
+                f.writelines("Precision : {}\n".format(round(evaluation_set[name][1] / evaluation_set[name][5], 4)))
+                f.writelines("Recall : {}\n".format(round(evaluation_set[name][2] / evaluation_set[name][5], 4)))
+                f.writelines("F-score : {}\n\n".format(round(evaluation_set[name][3] / evaluation_set[name][5], 4)))
 
 
 def predict_spacy(content, model_filepath):

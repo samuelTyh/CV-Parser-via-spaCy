@@ -1,3 +1,4 @@
+import os
 import json
 import argparse
 from app import ner_trainer, pdf_extractor, config
@@ -8,7 +9,7 @@ parser.add_argument("-f", "--file", required=True, help="Original CV filepath")
 argument = parser.parse_args()
 
 
-def cvparser(test_size, n_iter, early_stopping):
+def cvparser(test_size, n_iter, early_stopping, dropout):
 
     # Invoke class
     ne = ner_trainer.NERspacy(test_size, n_iter, early_stopping)
@@ -21,17 +22,21 @@ def cvparser(test_size, n_iter, early_stopping):
     content = pdf_extractor.extract_pdf_content(cv_filepath)
 
     with open(argument.file + '.txt', 'w') as f:
-        f.write(content.replace('\n', ''))
+        f.write(content.replace('\n', '.'))
 
     if argument.model:
         model_filepath = argument.model
     else:
-        model_filepath = ne.train_spacy(train, test)
+        model_filepath = ne.train_spacy(train, test, dropout)
 
     output = ner_trainer.predict_spacy(content, model_filepath)
 
+    if 'prediction' not in os.listdir(''):
+        os.mkdir('prediction')
+
     with open("prediction/ner_prediction.json", "w") as f:
         json.dump(output, f)
+
     return output
 
 
@@ -39,5 +44,6 @@ if __name__ == "__main__":
     cvparser(
         test_size=config.HyperParameter.test_size,
         n_iter=config.HyperParameter.n_iter,
-        early_stopping=config.HyperParameter.early_stopping
+        early_stopping=config.HyperParameter.early_stopping,
+        dropout=config.HyperParameter.dropout
     )

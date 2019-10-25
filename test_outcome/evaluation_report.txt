@@ -9,10 +9,10 @@ F-score : 1.0
 
 
 For Entity location
-Accuracy : 99.7037%
-Precision : 0.997
-Recall : 0.997
-F-score : 0.997
+Accuracy : 100.0%
+Precision : 1.0
+Recall : 1.0
+F-score : 1.0
 
 
 For Entity contact
@@ -22,44 +22,44 @@ Recall : 1.0
 F-score : 1.0
 
 
-For Entity company
-Accuracy : 100.0%
-Precision : 1.0
-Recall : 1.0
-F-score : 1.0
-
-
 For Entity title
-Accuracy : 99.5556%
-Precision : 0.9956
-Recall : 0.9956
-F-score : 0.9952
+Accuracy : 98.2332%
+Precision : 0.9827
+Recall : 0.9823
+F-score : 0.9803
 
 
-For Entity skills
-Accuracy : 95.2593%
-Precision : 0.9919
-Recall : 0.9526
-F-score : 0.9698
+For Entity company
+Accuracy : 98.2332%
+Precision : 0.9865
+Recall : 0.9823
+F-score : 0.9838
 
 
 For Entity timeperiod
-Accuracy : 97.9259%
-Precision : 0.9893
-Recall : 0.9793
-F-score : 0.9824
-
-
-For Entity degree
-Accuracy : 100.0%
-Precision : 1.0
-Recall : 1.0
-F-score : 1.0
+Accuracy : 98.2332%
+Precision : 0.9827
+Recall : 0.9823
+F-score : 0.9816
 
 
 For Entity college
-Accuracy : 100.0%
-Precision : 1.0
-Recall : 1.0
-F-score : 1.0
+Accuracy : 96.8198%
+Precision : 0.951
+Recall : 0.9682
+F-score : 0.9595
+
+
+For Entity skills
+Accuracy : 93.6396%
+Precision : 0.9336
+Recall : 0.9364
+F-score : 0.928
+
+
+For Entity years
+Accuracy : 97.8799%
+Precision : 0.9793
+Recall : 0.9788
+F-score : 0.9775
 
