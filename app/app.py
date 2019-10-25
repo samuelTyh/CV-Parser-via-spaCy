@@ -5,28 +5,23 @@ from flask import Flask, flash, request, redirect, render_template, jsonify
 from werkzeug.utils import secure_filename
 from werkzeug.middleware.shared_data import SharedDataMiddleware
 
-from app import ner_trainer
-from app import pdf_extractor
+from app import ner_trainer, pdf_extractor, config
 from app.tools import upload_file_to_s3
 
-UPLOAD_FOLDER = os.getcwd() + "/app/uploaded"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
-
 app = Flask(__name__)
-app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+app.config.from_object(config.FlaskConfig)
 app.add_url_rule('/uploads/<filename>', 'uploaded_file',
                  build_only=True)
 app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
-    '/uploads':  app.config['UPLOAD_FOLDER']
+    '/uploads':  os.getcwd() + config.FlaskConfig.UPLOAD_FOLDER
 })
 
 
 def cvparser(filepath):
     content = pdf_extractor.extract_pdf_content_url(filepath)
-    model_filepath = os.getcwd()+ '/' + glob.glob('lib/model*')[0]
+    model_filepath = os.getcwd() + '/' + glob.glob('lib/model*')[0]
 
     return ner_trainer.predict_spacy(content, model_filepath)
 

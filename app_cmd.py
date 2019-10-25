@@ -1,7 +1,6 @@
+import json
 import argparse
-import ner_trainer
-import pdf_extractor
-import config
+from app import ner_trainer, pdf_extractor, config
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-M", "--model", help="filepath to store model")
@@ -29,8 +28,16 @@ def cvparser(test_size, n_iter, early_stopping):
     else:
         model_filepath = ne.train_spacy(train, test)
 
-    return ner_trainer.predict_spacy(content, model_filepath)
+    output = ner_trainer.predict_spacy(content, model_filepath)
+
+    with open("prediction/ner_prediction.json", "w") as f:
+        json.dump(output, f)
+    return output
 
 
 if __name__ == "__main__":
-    cvparser(test_size=config.test_size, n_iter=config.n_iter, early_stopping=config.early_stopping)
+    cvparser(
+        test_size=config.HyperParameter.test_size,
+        n_iter=config.HyperParameter.n_iter,
+        early_stopping=config.HyperParameter.early_stopping
+    )
