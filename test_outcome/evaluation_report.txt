@@ -1,63 +1,63 @@
-Testing data size: 21
+Testing data size: 27
 
 
-For Entity Name
+For Entity name
 Accuracy : 100.0%
 Precision : 1.0
 Recall : 1.0
 F-score : 1.0
 
 
-For Entity Title
-Accuracy : 99.7545%
-Precision : 0.9982
-Recall : 0.9975
-F-score : 0.9977
+For Entity location
+Accuracy : 99.7037%
+Precision : 0.997
+Recall : 0.997
+F-score : 0.997
 
 
-For Entity Location
+For Entity contact
 Accuracy : 100.0%
 Precision : 1.0
 Recall : 1.0
 F-score : 1.0
 
 
-For Entity Contact
+For Entity company
 Accuracy : 100.0%
 Precision : 1.0
 Recall : 1.0
 F-score : 1.0
 
 
-For Entity Years
-Accuracy : 99.6727%
-Precision : 1.0
-Recall : 0.9967
-F-score : 0.9984
+For Entity title
+Accuracy : 99.5556%
+Precision : 0.9956
+Recall : 0.9956
+F-score : 0.9952
 
 
-For Entity Company
-Accuracy : 99.5908%
-Precision : 0.9975
-Recall : 0.9959
-F-score : 0.9964
+For Entity skills
+Accuracy : 95.2593%
+Precision : 0.9919
+Recall : 0.9526
+F-score : 0.9698
 
 
-For Entity Skills
-Accuracy : 94.0262%
-Precision : 0.9856
-Recall : 0.9403
-F-score : 0.9601
+For Entity timeperiod
+Accuracy : 97.9259%
+Precision : 0.9893
+Recall : 0.9793
+F-score : 0.9824
 
 
-For Entity TimePeriod
+For Entity degree
 Accuracy : 100.0%
 Precision : 1.0
 Recall : 1.0
 F-score : 1.0
 
 
-For Entity Degree
+For Entity college
 Accuracy : 100.0%
 Precision : 1.0
 Recall : 1.0

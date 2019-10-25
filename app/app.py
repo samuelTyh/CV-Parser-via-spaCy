@@ -1,5 +1,6 @@
 import os
 import logging
+import glob
 from flask import Flask, flash, request, redirect, render_template, jsonify
 from werkzeug.utils import secure_filename
 from werkzeug.middleware.shared_data import SharedDataMiddleware
@@ -25,7 +26,7 @@ app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
 
 def cvparser(filepath):
     content = pdf_extractor.extract_pdf_content_url(filepath)
-    model_filepath = os.getcwd() + "/app/model_ner_53"
+    model_filepath = os.getcwd()+ '/' + glob.glob('lib/model*')[0]
 
     return ner_trainer.predict_spacy(content, model_filepath)
 
