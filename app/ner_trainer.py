@@ -7,8 +7,7 @@ import spacy
 import numpy as np
 from spacy.gold import GoldParse
 from spacy.util import minibatch, compounding
-from sklearn.metrics import precision_recall_fscore_support
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 
 def timer(method):
@@ -196,8 +195,4 @@ def predict_spacy(content, model_filepath):
             output[ent.label_].append(ent.text)
         pass
     print(output)
-
-    with open("prediction/ner_prediction.json", "w") as f:
-        json.dump(output, f)
-
     return output
