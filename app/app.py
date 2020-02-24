@@ -8,7 +8,7 @@ from werkzeug.middleware.shared_data import SharedDataMiddleware
 from app import ner_trainer, pdf_extractor, config
 from app.tools import upload_file_to_s3
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.config.from_object(config.FlaskConfig)
