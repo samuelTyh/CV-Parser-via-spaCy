@@ -5,17 +5,19 @@ import random
 import time
 import spacy
 import numpy as np
+import functools
 from spacy.gold import GoldParse
 from spacy.util import minibatch, compounding
 from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 
 def timer(method):
+    @functools.wraps(method)
     def timed(*args, **kw):
         ts = time.time()
         result = method(*args, **kw)
         te = time.time()
-        print("Completed in {} seconds".format(int(te - ts)))
+        print(f"Completed in {int(te - ts)} seconds")
         return result
     return timed
 
@@ -100,7 +102,7 @@ class NERspacy(object):
             early_stop = 0
 
             for itn in range(self.n_iter):
-                print("Starting iteration {}".format(itn + 1))
+                print(f"Starting iteration {itn + 1}")
                 random.shuffle(training_data)
                 losses = {}
                 batches = minibatch(training_data, size=compounding(4., 32., 1.001))
@@ -114,7 +116,7 @@ class NERspacy(object):
                         losses=losses)
 
                 if itn % display_freq == 0:
-                    print("Iteration {} Loss: {}".format(itn + 1, losses))
+                    print(f"Iteration {itn + 1} Loss: {losses}")
 
                 if losses["ner"] < losses_best:
                     early_stop = 0
@@ -122,17 +124,17 @@ class NERspacy(object):
                 else:
                     early_stop += 1
 
-                print("Training will stop early if value reached {not_improve}, "
-                      "it's {early_stop} now.\n".format(not_improve=self.not_improve, early_stop=early_stop))
+                print(f"Training will stop if the value reached {self.not_improve}, "
+                      f"and it's {early_stop} now.\n")
 
                 if early_stop >= self.not_improve:
                     break
 
             print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
 
-            model_filepath = os.getcwd()+"/lib/inactive_model/model_ner_{}".format(round(losses_best, 2))
+            model_filepath = os.getcwd() + f"/lib/inactive_model/model_ner_{round(losses_best, 2)}"
             with nlp.use_params(optimizer.averages):
-                nlp.to_disk(model_filepath)
+                nlp.to_disk(model_filepath, exclude=["vocab"])
 
             if testing_data:
                 self.validate_spacy(model=nlp, data=testing_data)
@@ -140,11 +142,11 @@ class NERspacy(object):
         return model_filepath
 
     @staticmethod
-    def validate_spacy(model, data, n_resume=0):
+    def validate_spacy(model, data, n_resume=0, evaluation_set=None):
 
         # test the model and evaluate it
         for text, annot in data:
-            f = open("test_outcome/resume{}.txt".format(n_resume), "w")
+            f = open(f"test_outcome/resume{n_resume}.txt", "w")
             doc_to_test = model(text)
             d = {}
             for ent in doc_to_test.ents:
@@ -178,15 +180,15 @@ class NERspacy(object):
                     evaluation_set[ent.label_][5] += 1
             n_resume += 1
         with open("test_outcome/evaluation_report.txt", 'w') as f:
-            f.writelines("Testing data size: {}\n\n".format(n_resume))
+            f.writelines(f"Testing data size: {n_resume}\n\n")
             for name in evaluation_set:
-                f.writelines("\nFor Entity {}\n".format(name))
+                f.writelines(f"\nFor Entity {name}\n")
                 f.writelines(
-                    "Accuracy : {}%\n".format(round((evaluation_set[name][4] / evaluation_set[name][5]) * 100, 4))
+                    f"Accuracy : {round((evaluation_set[name][4] / evaluation_set[name][5]) * 100, 4)}%\n"
                 )
-                f.writelines("Precision : {}\n".format(round(evaluation_set[name][1] / evaluation_set[name][5], 4)))
-                f.writelines("Recall : {}\n".format(round(evaluation_set[name][2] / evaluation_set[name][5], 4)))
-                f.writelines("F-score : {}\n\n".format(round(evaluation_set[name][3] / evaluation_set[name][5], 4)))
+                f.writelines(f"Precision : {round(evaluation_set[name][1] / evaluation_set[name][5], 4)}\n")
+                f.writelines(f"Recall : {round(evaluation_set[name][2] / evaluation_set[name][5], 4)}\n")
+                f.writelines(f"F-score : {round(evaluation_set[name][3] / evaluation_set[name][5], 4)}\n\n")
 
 
 def predict_spacy(content, model_filepath):

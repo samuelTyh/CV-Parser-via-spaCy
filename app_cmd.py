@@ -3,6 +3,7 @@ import json
 import argparse
 from app import ner_trainer, pdf_extractor, config
 
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-M", "--model", help="filepath to store model")
 parser.add_argument("-f", "--file", required=True, help="Original CV filepath")
@@ -31,7 +32,7 @@ def cvparser(test_size, n_iter, early_stopping, dropout):
 
     output = ner_trainer.predict_spacy(content, model_filepath)
 
-    if 'prediction' not in os.listdir(''):
+    if 'prediction' not in os.listdir('.'):
         os.mkdir('prediction')
 
     with open("prediction/ner_prediction.json", "w") as f:
