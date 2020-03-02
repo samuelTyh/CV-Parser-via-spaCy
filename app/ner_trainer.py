@@ -26,10 +26,11 @@ class NERspacy(object):
 
     data = os.getcwd() + "/data/NERspacy_project.json"
     
-    def __init__(self, test_size, n_iter, early_stopping):
+    def __init__(self, test_size, n_iter, early_stopping, model):
         self.testing_data_proportion = test_size
         self.n_iter = n_iter
         self.not_improve = early_stopping
+        self.model = model
 
     def convert_dataturks_to_spacy(self, filepath):
         random.seed(0)
@@ -77,10 +78,16 @@ class NERspacy(object):
             return None
 
     @timer
-    def train_spacy(self, training_data, testing_data, dropout, display_freq=1):
-        nlp = spacy.blank('en')  # create blank Language class
+    def train_spacy(self, training_data, testing_data, dropout, display_freq=1, output_dir=None,
+                    new_model_name="en_ner"):
         # create the built-in pipeline components and add them to the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
+        # create blank Language class
+        if self.model:
+            nlp = spacy.load(self.model, disable=["ner"])
+        else:
+            nlp = spacy.blank('en')
+
         if 'ner' not in nlp.pipe_names:
             ner = nlp.create_pipe('ner')
             nlp.add_pipe(ner, last=True)
@@ -132,14 +139,18 @@ class NERspacy(object):
 
             print(">>>>>>>>>>  Finished training  <<<<<<<<<<")
 
-            model_filepath = os.getcwd() + f"/lib/inactive_model/model_ner_{round(losses_best, 2)}"
+            if output_dir:
+                path = output_dir + f"en_model_ner_{round(losses_best, 2)}"
+            else:
+                path = os.getcwd() + f"/lib/inactive_model/en_model_ner_{round(losses_best, 2)}"
             with nlp.use_params(optimizer.averages):
-                nlp.to_disk(model_filepath, exclude=["vocab"])
+                nlp.meta["name"] = new_model_name
+                nlp.to_disk(path)
 
             if testing_data:
                 self.validate_spacy(model=nlp, data=testing_data)
 
-        return model_filepath
+        return path
 
     @staticmethod
     def validate_spacy(model, data, n_resume=0, evaluation_set=None):
