@@ -1,7 +1,7 @@
 class SpacyTraining:
     test_size = 0
-    n_iter = 500
-    early_stopping = 50
+    n_iter = 10
+    early_stopping = 2
     dropout = 0.35
     model = "en_core_web_sm"
 

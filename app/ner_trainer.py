@@ -84,7 +84,7 @@ class NERspacy(object):
         # nlp.create_pipe works for built-ins that are registered with spaCy
         # create blank Language class
         if self.model:
-            nlp = spacy.load(self.model, disable=["ner"])
+            nlp = spacy.load(self.model)
         else:
             nlp = spacy.blank('en')
 
@@ -143,12 +143,12 @@ class NERspacy(object):
                 path = output_dir + f"en_model_ner_{round(losses_best, 2)}"
             else:
                 path = os.getcwd() + f"/lib/inactive_model/en_model_ner_{round(losses_best, 2)}"
-            with nlp.use_params(optimizer.averages):
-                nlp.meta["name"] = new_model_name
-                nlp.to_disk(path)
-
             if testing_data:
                 self.validate_spacy(model=nlp, data=testing_data)
+
+        with nlp.use_params(optimizer.averages):
+            nlp.meta["name"] = new_model_name
+            nlp.to_disk(path)
 
         return path
 
