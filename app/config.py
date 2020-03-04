@@ -1,9 +1,9 @@
 class SpacyTraining:
     test_size = 0
-    n_iter = 10
-    early_stopping = 2
+    n_iter = 400
+    early_stopping = 50
     dropout = 0.35
-    model = "en_core_web_sm"
+    model = "en_core_web_md"
 
 
 class FlaskConfig:

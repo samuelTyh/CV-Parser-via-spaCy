@@ -3,6 +3,7 @@ import logging
 import json
 import random
 import time
+import pickle
 import spacy
 import numpy as np
 import functools
@@ -79,7 +80,7 @@ class NERspacy(object):
 
     @timer
     def train_spacy(self, training_data, testing_data, dropout, display_freq=1, output_dir=None,
-                    new_model_name="en_ner"):
+                    new_model_name="en_model"):
         # create the built-in pipeline components and add them to the pipeline
         # nlp.create_pipe works for built-ins that are registered with spaCy
         # create blank Language class
@@ -143,12 +144,20 @@ class NERspacy(object):
                 path = output_dir + f"en_model_ner_{round(losses_best, 2)}"
             else:
                 path = os.getcwd() + f"/lib/inactive_model/en_model_ner_{round(losses_best, 2)}"
+                os.mkdir(path)
             if testing_data:
                 self.validate_spacy(model=nlp, data=testing_data)
 
         with nlp.use_params(optimizer.averages):
             nlp.meta["name"] = new_model_name
-            nlp.to_disk(path)
+            bytes_data = nlp.to_bytes()
+            lang = nlp.meta["lang"]
+            pipeline = nlp.meta["pipeline"]
+
+        model_data = dict(bytes_data=bytes_data, lang=lang, pipeline=pipeline)
+
+        with open(path + '/model.pkl', 'wb') as f:
+            pickle.dump(model_data, f)
 
         return path
 
@@ -203,7 +212,20 @@ class NERspacy(object):
 
 
 def predict_spacy(content, model_filepath):
-    nlp = spacy.load(model_filepath)
+    """
+    Load pre-trained model for prediction
+    :param content: string, The content which extracted from CV
+    :param model_filepath: string, directory of model storing
+    :return: object, NER results
+    """
+    with open(model_filepath + '/model.pkl', 'rb') as f:
+        model = pickle.load(f)
+    nlp = spacy.blank(model['lang'])
+    for pipe_name in model['pipeline']:
+        pipe = nlp.create_pipe(pipe_name)
+        nlp.add_pipe(pipe)
+    nlp.from_bytes(model['bytes_data'])
+    
     content = content.lower()
     doc = nlp(content)
     output = dict()
