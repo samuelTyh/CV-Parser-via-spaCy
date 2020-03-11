@@ -3,8 +3,8 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from io import StringIO, BytesIO
-from urllib.request import urlopen
-
+# from urllib.request import urlopen
+import requests
 
 def extract_pdf_content(file):
     rsrcmgr = PDFResourceManager()
@@ -33,7 +33,7 @@ def extract_pdf_content_url(url):
     outfp = StringIO()
     laparams = LAParams()
     device = TextConverter(rsrcmgr=rsrcmgr, outfp=outfp, codec=codec, laparams=laparams)
-    f = urlopen(url).read()
+    f = requests.get(url, stream=True)
     fp = BytesIO(f)
     interpreter = PDFPageInterpreter(rsrcmgr, device)
     password = ""
