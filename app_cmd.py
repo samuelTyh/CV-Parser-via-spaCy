@@ -1,16 +1,16 @@
 import os
 import json
 import argparse
-from app import ner_trainer, pdf_extractor, config
+from app import ner_trainer, config, CVParser
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-M", "--model", help="filepath to store model")
-parser.add_argument("-f", "--file", required=True, help="Original CV filepath")
+parser.add_argument("-M", "--model", help="The file's path where the model stored")
+parser.add_argument("-f", "--file", required=True, help="Original CV file path")
 argument = parser.parse_args()
 
 
-def cvparser(test_size, n_iter, early_stopping, model, dropout):
+def parser_trainer(test_size, n_iter, early_stopping, model, dropout):
 
     # Invoke class
     ne = ner_trainer.NERspacy(test_size, n_iter, early_stopping, model)
@@ -18,18 +18,21 @@ def cvparser(test_size, n_iter, early_stopping, model, dropout):
     # Get training data and testing data
     train, test = ne.convert_dataturks_to_spacy(ne.data)
 
-    # Parse content from original CV
-    cv_filepath = argument.file
-    content = pdf_extractor.extract_pdf_content(cv_filepath)
-
-    with open(argument.file + '.txt', 'w') as f:
-        f.write(content.replace('\n', '.'))
-
+    # Invoke model
     if argument.model:
         model_filepath = argument.model
     else:
         model_filepath = ne.train_spacy(train, test, dropout)
-    output = ner_trainer.predict_spacy(content, model_filepath)
+    cvparser = CVParser(model=model_filepath)
+
+    # Parse content from original CV
+    file_path = argument.file
+    content = cvparser.parse_from_file(file_path)
+
+    with open(argument.file + '.txt', 'w') as f:
+        f.write(content.replace('\n', '.'))
+
+    output = cvparser.predict_name_entities(content)
 
     if 'prediction' not in os.listdir('.'):
         os.mkdir('prediction')
@@ -40,7 +43,7 @@ def cvparser(test_size, n_iter, early_stopping, model, dropout):
     return output
 
 
-cvparser(
+parser_trainer(
     test_size=config.SpacyTraining.test_size,
     n_iter=config.SpacyTraining.n_iter,
     early_stopping=config.SpacyTraining.early_stopping,

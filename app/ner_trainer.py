@@ -23,10 +23,27 @@ def timer(method):
     return timed
 
 
-class NERspacy(object):
+def spacy_model_loader(path):
+    """
+    Helper for loading spacy binary format model
+    :param path: string, the path where model stored
+    :return: object, spacy model
+    """
+    with open(path, "rb") as f:
+        model = pickle.load(f)
+    nlp = spacy.blank(model["lang"])
+    for pipe_name in model["pipeline"]:
+        pipe = nlp.create_pipe(pipe_name)
+        nlp.add_pipe(pipe)
+    nlp.from_bytes(model["bytes_data"])
+
+    return nlp
+
+
+class NERspacy:
 
     data = os.getcwd() + "/data/NERspacy_project.json"
-    
+
     def __init__(self, test_size, n_iter, early_stopping, model):
         self.testing_data_proportion = test_size
         self.n_iter = n_iter
@@ -209,31 +226,3 @@ class NERspacy(object):
                 f.writelines(f"Precision : {round(evaluation_set[name][1] / evaluation_set[name][5], 4)}\n")
                 f.writelines(f"Recall : {round(evaluation_set[name][2] / evaluation_set[name][5], 4)}\n")
                 f.writelines(f"F-score : {round(evaluation_set[name][3] / evaluation_set[name][5], 4)}\n\n")
-
-
-def predict_spacy(content, model_filepath):
-    """
-    Load pre-trained model for prediction
-    :param content: string, The content which extracted from CV
-    :param model_filepath: string, directory of model storing
-    :return: object, NER results
-    """
-    with open(model_filepath + '/model.pkl', 'rb') as f:
-        model = pickle.load(f)
-    nlp = spacy.blank(model['lang'])
-    for pipe_name in model['pipeline']:
-        pipe = nlp.create_pipe(pipe_name)
-        nlp.add_pipe(pipe)
-    nlp.from_bytes(model['bytes_data'])
-    
-    content = content.lower()
-    doc = nlp(content)
-    output = dict()
-    for ent in doc.ents:
-        output[ent.label_] = []
-    for ent in doc.ents:
-        if ent.text not in output[ent.label_]:
-            output[ent.label_].append(ent.text)
-        pass
-    print(output)
-    return output
