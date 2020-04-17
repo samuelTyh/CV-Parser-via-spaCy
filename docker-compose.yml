@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file: .env
+    links:
+      - tika
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+
+  tika:
+    container_name: tika
+    image: apache/tika:1.23
+    hostname: tika

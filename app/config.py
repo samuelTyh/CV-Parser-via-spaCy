@@ -14,3 +14,4 @@ class FlaskConfig:
 
 class ModelConfig:
     MODEL_PATH = "/lib/en_model_ner_33119"
+    TIKA_URL = "http://tika:9998/tika"

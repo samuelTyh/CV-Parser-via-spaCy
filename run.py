@@ -4,8 +4,8 @@ from flask import Flask, flash, request, redirect, render_template, jsonify
 from werkzeug.utils import secure_filename
 from werkzeug.middleware.shared_data import SharedDataMiddleware
 
-from . import config, CVParser
-from .tools import upload_file_to_s3
+from app import config, CVParser
+from app.tools import upload_file_to_s3
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 

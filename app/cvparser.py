@@ -1,8 +1,6 @@
 import os
 import re
 import requests
-import tika
-from tika import parser
 from .config import ModelConfig
 from .ner_trainer import spacy_model_loader
 
@@ -16,7 +14,7 @@ class CVParser:
 
     @staticmethod
     def parse_from_file(file):
-        content_parsed = tika.parser.from_file(filename=file)
+        content_parsed = requests.put(ModelConfig.TIKA_URL, file)
         text = content_parsed['content']
         content = text.encode("ascii", "ignore").decode("utf-8")
         output = re.sub(r"[\n\r\s]+", " ", content)
@@ -25,8 +23,8 @@ class CVParser:
     @staticmethod
     def parse_from_url(url):
         pdf = requests.get(url, stream=True)
-        content_parsed = tika.parser.from_buffer(pdf)
-        text = content_parsed['content']
+        content_parsed = requests.put(ModelConfig.TIKA_URL, pdf)
+        text = content_parsed.text
         content = text.encode("ascii", "ignore").decode("utf-8")
         output = re.sub(r"[\n\r\s]+", " ", content)
         return output
