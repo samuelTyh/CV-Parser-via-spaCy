@@ -83,7 +83,7 @@ def demo_pdf_parser(url):
     outfp = StringIO()
     laparams = LAParams()
     device = TextConverter(rsrcmgr=rsrcmgr, outfp=outfp, codec=codec, laparams=laparams)
-    f = requests.get(url, stream=True)
+    f = requests.get(url, stream=True).content
     fp = BytesIO(f)
     interpreter = PDFPageInterpreter(rsrcmgr, device)
     password = ""
@@ -94,7 +94,8 @@ def demo_pdf_parser(url):
                                   check_extractable=True):
         interpreter.process_page(page)
     fp.close()
-    mystr = outfp.getvalue()
+    text = outfp.getvalue().encode("ascii", "ignore").decode("utf-8")
+    output = re.sub(r"[\n\r\s]+", " ", text)
     device.close()
     outfp.close()
-    return mystr
+    return output
