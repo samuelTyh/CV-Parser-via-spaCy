@@ -7,11 +7,11 @@ class SpacyTraining:
 
 
 class FlaskConfig:
-    UPLOAD_FOLDER = "/app/uploaded"
+    UPLOAD_FOLDER = "app/uploaded"
     MAX_CONTENT_LENGTH = 32 * 1024 * 1024
     JSONIFY_PRETTYPRINT_REGULAR = True
 
 
 class ModelConfig:
-    MODEL_PATH = "/lib/en_model_ner_33119"
+    MODEL_PATH = "lib/en_model_ner_33119"
     TIKA_URL = "http://tika:9998/tika"

@@ -6,3 +6,5 @@ scikit_learn==0.21.3
 gunicorn==19.9.0
 boto3==1.10.0
 requests==2.23.0
+pdfminer.six==20181108
+python-dotenv==0.12.0

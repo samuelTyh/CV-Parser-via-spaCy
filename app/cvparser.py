@@ -1,6 +1,13 @@
 import os
 import re
 import requests
+
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+from io import StringIO, BytesIO
+
 from .config import ModelConfig
 from .ner_trainer import spacy_model_loader
 
@@ -14,6 +21,11 @@ class CVParser:
 
     @staticmethod
     def parse_from_file(file):
+        """
+        Parse file on development env
+        :param file: local file path
+        :return: string, The file's content in string format
+        """
         content_parsed = requests.put(ModelConfig.TIKA_URL, file)
         text = content_parsed['content']
         content = text.encode("ascii", "ignore").decode("utf-8")
@@ -58,5 +70,31 @@ class CVParser:
 
         :return: object, customized contents, phrases, words' classification of CV
         """
-        content = self.parse_from_url(cv_path)
+        if os.environ['FLASK_ENV'] == 'development':
+            content = self.parse_from_url(cv_path)
+        else:
+            content = demo_pdf_parser(cv_path)
         return self.predict_name_entities(content)
+
+
+def demo_pdf_parser(url):
+    rsrcmgr = PDFResourceManager()
+    codec = 'utf-8'
+    outfp = StringIO()
+    laparams = LAParams()
+    device = TextConverter(rsrcmgr=rsrcmgr, outfp=outfp, codec=codec, laparams=laparams)
+    f = requests.get(url, stream=True)
+    fp = BytesIO(f)
+    interpreter = PDFPageInterpreter(rsrcmgr, device)
+    password = ""
+    maxpages = 0
+    caching = True
+    pagenos = set()
+    for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages, password=password, caching=caching,
+                                  check_extractable=True):
+        interpreter.process_page(page)
+    fp.close()
+    mystr = outfp.getvalue()
+    device.close()
+    outfp.close()
+    return mystr
