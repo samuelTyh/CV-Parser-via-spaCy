@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.7.3-lightgrey)
+![Flask](https://img.shields.io/badge/Flask-1.1.1-red)
+![spaCy](https://img.shields.io/badge/spaCy-2.2.1-blue)
+
+
 # CV parser
 
 This project is implementing customized Name Entity Recognition (NER) by spaCy. Recreate 11 classes of name entities and train the model.
