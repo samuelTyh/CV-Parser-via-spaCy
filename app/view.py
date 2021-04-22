@@ -1,3 +1,4 @@
+import datetime
 import os
 import logging
 from flask import Blueprint, flash, request, redirect, render_template, jsonify
@@ -18,6 +19,16 @@ parser = CVParser()
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@bp.route('/ping', methods=['GET'])
+def ping():
+    res = {
+        "name": "CV parser",
+        "requested_at": datetime.datetime.now(),
+        "status": "ok"
+    }
+    return jsonify(res)
 
 
 @bp.route('/', methods=['GET', 'POST'])
