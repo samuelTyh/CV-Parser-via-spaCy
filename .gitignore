@@ -7,3 +7,4 @@ test_outcome/*.txt
 prediction/
 lib/inactive_model/
 .env
+.venv
